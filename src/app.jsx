@@ -1,8 +1,11 @@
 import './app.css';
+import Header from './component/header/header';
 
 function App() {
   return (
-    <h1>빌려드림 :)</h1>
+    <div className="app">
+    <Header />
+    </div>
   );
 }
 
