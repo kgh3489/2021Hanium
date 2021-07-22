@@ -7,7 +7,7 @@ const ProductList = (props) => {
 
     return (
         <section className={styles.product_list}>
-            ASDFSADF
+            상품 내용 리스트
 
         </section>
     )
