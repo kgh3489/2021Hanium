@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './product_list.module.css';
+import Product from './product_item/product_item'
+
 
 const ProductList = (props) => {
         
@@ -7,21 +9,7 @@ const ProductList = (props) => {
 
     return (
         <section className={styles.product_list}>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            <h1 className={styles.h1_color}>상품 내용 리스트</h1>
-            
-
+            <Product />
         </section>
     )
 

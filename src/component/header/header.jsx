@@ -14,7 +14,7 @@ const Header = (props) => {
                 </button>
             </div>
             <div className={styles.title}>
-                <h1>빌려드림</h1>
+                <h1 className={styles.title_h1}>빌려드림</h1>
             </div>
             <div className={styles.header_right}>
                 <button className={`${styles.btn} ${styles.searchBtn}`}><i className="fas fa-search"></i></button>

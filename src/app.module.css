@@ -13,3 +13,9 @@ button {
   border-right: 1px solid lightgray;
   border-left: 1px solid lightgray;
 }
+
+@media screen and (max-width: 20000px) {
+  .app {
+    width: 375px;
+  }
+}
