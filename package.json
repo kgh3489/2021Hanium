@@ -2,7 +2,7 @@
   "name": "project_b",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://final-bil.github.io/2021Hanium/",
+  "homepage": "https://final-bil.github.io/2021Hanium/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@testing-library/jest-dom": "^5.11.4",

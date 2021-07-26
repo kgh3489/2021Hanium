@@ -8,7 +8,7 @@ function App() {
     <div className={styles.app}>
     <Header />
     <ProductList />
-    <Footer />
+
     </div>
   );
 }
