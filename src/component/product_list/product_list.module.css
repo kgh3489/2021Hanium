@@ -1,4 +1,11 @@
 .product_list {
     overflow: scroll;
     overflow-x: hidden;
+    height: 100%
+}
+
+.h1_color {
+    display: flex;
+    color: black;
+    align-items: center;
 }
