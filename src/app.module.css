@@ -4,9 +4,9 @@ button {
 }
 
 .app {
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   margin: 0 auto;
   height: 100vh;
