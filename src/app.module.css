@@ -11,3 +11,9 @@ button {
   margin: 0;
   height: 100vh;
 }
+
+@media screen and (max-width: 20000px) {
+  .app {
+    width: 375px;
+  }
+}
