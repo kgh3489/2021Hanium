@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './header.module.css';
-import Header_pop from './header_pop/header_pop';
+import HeaderPop from './header_pop/header_pop';
 
 const Header = (props) => {
     
@@ -15,7 +15,7 @@ const Header = (props) => {
 
     return (
         <header className={styles.header}>
-            {isMenuOpen.menuOpen && < Header_pop toggleMenu={toggleMenu}/>}
+            {isMenuOpen.menuOpen && < HeaderPop toggleMenu={toggleMenu}/>}
             <div className={styles.header_left}>
                 <button className={`${styles.btn} ${styles.barBtn}`} onClick={toggleMenu}>
                     <i className="fas fa-bars"></i>
