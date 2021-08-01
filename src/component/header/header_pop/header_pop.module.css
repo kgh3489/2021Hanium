@@ -8,10 +8,77 @@
 }
 
 .pop_menu {
-  position: absolute;
-  display: block;
-  top: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background-color: snow;
-  width: 75%;
+  width: 300px;
   height: 100vh;
+}
+
+.beforeLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  height: 90px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.message {
+  font-size: 0.8em;
+  color: darkgray;
+}
+
+.move_login_page {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: skyblue;
+  cursor: pointer;
+}
+
+.pop_profile {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  padding: 0.5rem 0;
+  font-size: 1.1em;
+}
+
+.profile_left {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+.profile_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 80%;
+}
+
+.profileImg {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  color: darkgray;
+  cursor: pointer;
+}
+
+.nickName {
+  color: slategray;
+  margin-left: 0.5rem;
+}
+
+.move_profile_page {
+  font-size: 0.6em;
+  color: skyblue;
+  text-align: start;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
 }
