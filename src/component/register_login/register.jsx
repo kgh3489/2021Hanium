@@ -7,7 +7,7 @@ const Register = (props) => {
 
     return (
         <div className={styles.root}>
-            
+            <div></div>
         </div>
     )
 };
