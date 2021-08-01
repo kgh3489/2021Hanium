@@ -10,7 +10,7 @@ function App() {
       <ProductList />
       <Footer />
       <button className={styles.float}>
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
     </div>
   );

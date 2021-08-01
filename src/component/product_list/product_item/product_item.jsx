@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './product_item.module.css';
 
-const product_item = (props) => {
+const Product_item = (props) => {
             
 
 
     return (
         <div className={styles.product_item}>
             <div className={styles.imagesec}>
-                <i class="fas fa-bicycle"></i>
+                <i className="fas fa-bicycle"></i>
             </div>
             <div className={styles.descsec}>
                 <div className={styles.product_title}>
@@ -25,4 +25,4 @@ const product_item = (props) => {
     )
 };
 
-export default product_item;
+export default Product_item;
