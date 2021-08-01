@@ -5,12 +5,29 @@
     width: 100%;
 }
 
+/* 스크롤바 디자인 */
 .product_list::-webkit-scrollbar {
-    width: 0.3rem;
-  }
-  
-  .product_list::-webkit-scrollbar-thumb {
+    width: 0.15em;
+}
+
+.product_list::-webkit-scrollbar-thumb {
     background-color: lightgrey;
     border-radius: 1em;
-  }
+}
 
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:45px;
+	right:155px;
+	background-color: skyblue;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my_float{
+	margin-top:22px;
+}

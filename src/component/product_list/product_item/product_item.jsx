@@ -8,10 +8,18 @@ const product_item = (props) => {
     return (
         <div className={styles.product_item}>
             <div className={styles.imagesec}>
-                사진
+                
             </div>
             <div className={styles.descsec}>
-                상세설명상세설명상세설명상세설명상세설명상세설명
+                <div className={styles.product_title}>
+                    <span>자전거 이름 란</span>
+                </div>
+                <div className={styles.product_desc}>
+                    <span>이곳은 상품의 상세설명란입니다. 이곳은 상품의 상세설명란입니다.이곳은 상품의 상세설명란입니다.</span>
+                </div>
+                <div className={styles.product_price}>
+                    <span>판매자 / 100,000</span>
+                </div>
             </div>
         </div>
     )

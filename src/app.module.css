@@ -12,8 +12,11 @@ button {
   height: 100vh;
 }
 
+/* 반응형 | 미디어 쿼리 */
 @media screen and (max-width: 20000px) {
   .app {
     width: 375px;
   }
 }
+
+

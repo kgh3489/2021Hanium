@@ -6,9 +6,9 @@ import ProductList from './component/product_list/product_list';
 function App() {
   return (
     <div className={styles.app}>
-    <Header />
-    <ProductList />
-    <Footer />
+      <Header />
+      <ProductList />
+      <Footer />
     </div>
   );
 }

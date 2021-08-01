@@ -1,20 +1,42 @@
+/* 아이템 바 */
 .product_item {
     display: flex;
-    height: 17%;
+    height: 120px;
     width: 100%;
-    border-bottom: 1px solid red;
-    padding: 1em 0.7em;
+    background-color: snow;
+    border-bottom: 1px solid lightgray;
 }
+/* 좌측 이미지 영역 */
 .imagesec {
-    height: 100%;
     width: 30%;
     background-color: pink;
+    margin: 0.5rem; 
+    border-radius: 5px;
 }
-
+/* 우측 상품 상세설명 */
 .descsec {
-    height: 100%;
     width: 70%;
     background-color: lightblue;
-    padding-right: 0.3em;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.3rem;
 }
+/* 상세설명 세부사항 */
+.product_title {
+    width: 100%;
+    font-size: 1.05em;
+    font-weight: bold;
+}
+
+.product_desc {
+    width: 100%;
+    height: 60%;
+    font-size: 0.7em;
+}
+
+.product_price {
+    width: 100%;
+    text-align: right;
+    font-size: 0.8em;
+}
+
 
