@@ -1,18 +1,20 @@
 .product_item {
     display: flex;
-    overflow-x: hidden;
-    height: 7em;
+    height: 17%;
     width: 100%;
+    border-bottom: 1px solid red;
+    padding: 1em 0.7em;
 }
-.leftsec {
+.imagesec {
     height: 100%;
     width: 30%;
-    background-color: blue;
+    background-color: pink;
 }
 
-.rightsec {
+.descsec {
     height: 100%;
     width: 70%;
-    background-color: red;
+    background-color: lightblue;
+    padding-right: 0.3em;
 }
 

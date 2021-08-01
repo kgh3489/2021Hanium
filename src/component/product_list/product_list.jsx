@@ -10,6 +10,12 @@ const ProductList = (props) => {
     return (
         <section className={styles.product_list}>
             <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
         </section>
     )
 

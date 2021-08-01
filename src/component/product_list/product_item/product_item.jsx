@@ -7,11 +7,11 @@ const product_item = (props) => {
 
     return (
         <div className={styles.product_item}>
-            <div className={styles.leftsec}>
+            <div className={styles.imagesec}>
                 사진
             </div>
-            <div className={styles.rightsec}>
-                상세설명
+            <div className={styles.descsec}>
+                상세설명상세설명상세설명상세설명상세설명상세설명
             </div>
         </div>
     )

@@ -1,8 +1,16 @@
 .product_list {
-    display: flex;
     overflow: scroll;
     overflow-x: hidden;
     height: 100%;
     width: 100%;
 }
+
+.product_list::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+  
+  .product_list::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 1em;
+  }
 
