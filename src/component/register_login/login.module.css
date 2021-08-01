@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.banner {
+    background-color: lightcoral;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner > span {
+    margin: 0 auto;
+}
+
+.login_input {
+    display: flex;
+    flex-direction: column;
+    background-color: lightcyan;
+    width: 100%;
+    height: 40%;
+}
+.login_btn {
+    background-color: lightcyan;
+    width: 100%;
+    height: 5%;
+}
+
+.login_sns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
