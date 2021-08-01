@@ -9,6 +9,9 @@ function App() {
       <Header />
       <ProductList />
       <Footer />
+      <button className={styles.float}>
+        <i class="fas fa-plus"></i>
+      </button>
     </div>
   );
 }

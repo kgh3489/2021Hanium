@@ -17,9 +17,9 @@ const ProductList = (props) => {
             <Product />
             <Product />
             <Product />
-            <a href={""} className={styles.float}>
-                <i className={styles.my_float}></i>
-            </a>
+            <Product />
+            <Product />
+
         </section>
     )
 

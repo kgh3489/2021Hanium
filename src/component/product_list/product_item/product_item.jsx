@@ -8,11 +8,11 @@ const product_item = (props) => {
     return (
         <div className={styles.product_item}>
             <div className={styles.imagesec}>
-                
+                <i class="fas fa-bicycle"></i>
             </div>
             <div className={styles.descsec}>
                 <div className={styles.product_title}>
-                    <span>자전거 이름 란</span>
+                    <span>자전거 이름</span>
                 </div>
                 <div className={styles.product_desc}>
                     <span>이곳은 상품의 상세설명란입니다. 이곳은 상품의 상세설명란입니다.이곳은 상품의 상세설명란입니다.</span>
@@ -23,8 +23,6 @@ const product_item = (props) => {
             </div>
         </div>
     )
-
-
 };
 
 export default product_item;
