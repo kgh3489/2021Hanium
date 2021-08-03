@@ -8,7 +8,7 @@ const Login = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
-                <span>빌려드림</span>
+                <span></span>
             </div>
             <div className={styles.form}>
                 <div className={styles.form_group}>
@@ -20,8 +20,9 @@ const Login = (props) => {
                     <input type="password" name="password" placeholder="Password" />
                 </div>
             </div>
-            <div className={styles.login_btn}>
-                회원가입 로그인
+            <div className={styles.btns}>
+                <button className={styles.login_btn}>로그인</button>
+                <button className={styles.register_btn}>회원가입</button>
             </div>
             <div className={styles.login_sns}>
                 <span>네이버</span>
