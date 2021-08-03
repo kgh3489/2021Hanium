@@ -10,9 +10,15 @@ const Login = (props) => {
             <div className={styles.banner}>
                 <span>빌려드림</span>
             </div>
-            <div className={styles.login_input}>
-                <span>아이디</span>
-                <span>패스워드</span>
+            <div className={styles.form}>
+                <div className={styles.form_group}>
+                    <label htmlFor="username">아이디</label>
+                    <input type="text" name="username" placeholder="ID" />
+                </div>
+                <div className={styles.form_group}>
+                    <label htmlFor="password">패스워드</label>
+                    <input type="password" name="password" placeholder="Password" />
+                </div>
             </div>
             <div className={styles.login_btn}>
                 회원가입 로그인
