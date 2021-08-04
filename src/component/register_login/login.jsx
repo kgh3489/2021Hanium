@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './login.module.css';
+import logo from 'public/images/logo.png';
 
 const Login = (props) => {
             
@@ -8,7 +9,7 @@ const Login = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
-                <span></span>
+                <img src={logo} alt="logo" />
             </div>
             <div className={styles.form}>
                 <div className={styles.form_group}>
