@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: slateblue;
+}
+
+.gotoHome {
+  font-size: 1.5em;
+  color: skyblue;
+  cursor: pointer;
+}
+
+.banner {
+  font-size: 2em;
+  margin-top: 10rem;
+  text-align: center;
+  background-color: tomato;
+  color: skyblue;
+}
