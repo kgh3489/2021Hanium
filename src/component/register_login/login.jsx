@@ -1,13 +1,23 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './login.module.css';
 import logo from 'public/images/logo.png';
 
 const Login = (props) => {
-            
-
+    
+    const history = useHistory();
+    
+    const goToHome = () => {
+        history.push({
+            pathname: "/"
+        })
+    }
 
     return (
         <div className={styles.container}>
+            <div className={styles.header}>
+                <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
+            </div>
             <div className={styles.banner}>
                 <img src={logo} alt="logo" />
             </div>
@@ -30,7 +40,7 @@ const Login = (props) => {
                 <span>카카오</span>
                 <span>페이스북</span>
                 <span>구글</span>
-            </div>
+            </div>    
         </div>
     )
 };
