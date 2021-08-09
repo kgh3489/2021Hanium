@@ -6,6 +6,20 @@
     text-align: center;
 }
 
+/* 헤더 */
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: skyblue;
+}
+
+/* 뒤로가기 버튼 */
+.gotoHome {
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+}
+
 /* 상단배너 */
 .banner {
     width: 100%;
