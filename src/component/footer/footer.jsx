@@ -5,7 +5,7 @@ const Footer = (props) => {
 
     return (
         <footer className={styles.footer}>    
-                <span className={styles.footer_span}>'빌려드림' by upflag, kgh, weedkim </span>
+                <span className={styles.footer_span}>'Lend' by upflag, kgh, weedkim </span>
         </footer>
     )
 
