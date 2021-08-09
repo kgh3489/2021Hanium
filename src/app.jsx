@@ -19,17 +19,8 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-
-
-
-
-
         </Switch>
       </BrowserRouter>
-      
-      <button className={styles.float}>
-        <i className="fas fa-plus"></i>
-      </button>
     </div>
   );
 }

@@ -19,7 +19,9 @@ const ProductList = (props) => {
             <Product />
             <Product />
             <Product />
-
+            <button className={styles.float}>
+                <i className="fas fa-plus"></i>
+            </button>
         </section>
     )
 
