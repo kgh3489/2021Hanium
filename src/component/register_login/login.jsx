@@ -18,7 +18,7 @@ const Login = (props) => {
                 <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
             </div>
             <div className={styles.banner}>
-                <img src="2021Hanium/images/logo.png" alt="logo" />
+                <img className={styles.logo} src="2021Hanium/images/logo.png" alt="logo" />
             </div>
             <div className={styles.form}>
                 <div className={styles.form_group}>
