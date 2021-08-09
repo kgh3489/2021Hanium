@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './login.module.css';
-import logo from 'public/images/logo.png';
 
 const Login = (props) => {
     
@@ -9,7 +8,7 @@ const Login = (props) => {
     
     const goToHome = () => {
         history.push({
-            pathname: "/"
+            pathname: "/2021Hanium"
         })
     }
 
@@ -19,7 +18,7 @@ const Login = (props) => {
                 <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
             </div>
             <div className={styles.banner}>
-                <img src={logo} alt="logo" />
+                <img src="2021Hanium/images/logo.png" alt="logo" />
             </div>
             <div className={styles.form}>
                 <div className={styles.form_group}>

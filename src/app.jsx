@@ -10,7 +10,7 @@ function App() {
     <div className={styles.app}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/2021Hanium">
             <Header />
             <ProductList />
             <Footer />
