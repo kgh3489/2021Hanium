@@ -4,6 +4,7 @@ import styles from './login.module.css';
 
 const Login = (props) => {
     
+    /* 컴포넌트 스위칭 */
     const history = useHistory();
     
     const goToHome = () => {
@@ -11,6 +12,23 @@ const Login = (props) => {
             pathname: "/2021Hanium"
         })
     }
+
+    /* 네이버 아이디 로그인 */
+    const {naver} = window;
+
+    const Naver = () => {
+        const naverLogin = new naver.LoginWithNaverId({
+            clientId: aLUPHGNIXs0WoC2mVxqX,
+            callbackUrl: "http://localhost:3000/login",
+            isPopup: false,
+            loginButton: {
+                color: 'green',
+                type: 3,
+                height: '50'
+            }
+        });
+        naverLogin.init();
+    };
 
     return (
         <div className={styles.container}>
