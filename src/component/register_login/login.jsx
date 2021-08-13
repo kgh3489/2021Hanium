@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import styles from './login.module.css';
 
 const Login = (props) => {
@@ -62,9 +61,8 @@ const Login = (props) => {
             <div className={styles.btns}>
                 <button className={styles.login_btn}>로그인</button>
                 <button className={styles.register_btn}>회원가입</button>
-            </div>"
+            </div>
             <div id="naverIdLogin" className={styles.login_sns}></div>   
-            <div id='naverIdLogin' />
         </div>
     )
 };
