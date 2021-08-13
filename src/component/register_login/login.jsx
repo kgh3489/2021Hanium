@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styles from './login.module.css';
 
 const Login = (props) => {
@@ -12,23 +13,33 @@ const Login = (props) => {
             pathname: "/2021Hanium"
         })
     }
-
-    /* 네이버 아이디 로그인 */
+    
+    // 네이버 로그인
     const {naver} = window;
-
-    const Naver = () => {
+    const initializeNaverLogin = () => {
         const naverLogin = new naver.LoginWithNaverId({
-            clientId: aLUPHGNIXs0WoC2mVxqX,
-            callbackUrl: "http://localhost:3000/login",
-            isPopup: false,
-            loginButton: {
-                color: 'green',
-                type: 3,
-                height: '50'
-            }
+            clientId: "aLUPHGNIXs0WoC2mVxqX",
+            callbackUrl: "http://localhost:3000/login", 
+            isPopup: true, // popup 형식으로 띄울것인지 설정
+            loginButton: { color: 'white', type: 3, height: '50' }, //버튼의 스타일, 타입, 크기를 지정
         });
         naverLogin.init();
     };
+
+    const location = useLocation();  
+
+    const getNaverToken = () => {
+        if (!location.hash) return;
+        const token = location.hash.split('=')[1].split('&')[0];
+        console.log(token);
+    };
+
+    useEffect(() => {
+        initializeNaverLogin();
+        getNaverToken();
+    }, []);
+    
+    
 
     return (
         <div className={styles.container}>
@@ -51,15 +62,63 @@ const Login = (props) => {
             <div className={styles.btns}>
                 <button className={styles.login_btn}>로그인</button>
                 <button className={styles.register_btn}>회원가입</button>
-            </div>
-            <div className={styles.login_sns}>
-                <span>네이버</span>
-                <span>카카오</span>
-                <span>페이스북</span>
-                <span>구글</span>
-            </div>    
+            </div>"
+            <div id="naverIdLogin" className={styles.login_sns}></div>   
+            <div id='naverIdLogin' />
         </div>
     )
 };
 
 export default Login;
+
+
+
+/* 
+    // 콜백URL, 클라이언트 아이디 대입
+    const {naver} = window;
+
+    const Naver = () => {
+        const naverLogin = new naver.LoginWithNaverId({
+            clientId: aLUPHGNIXs0WoC2mVxqX,
+            callbackUrl: "http://localhost:3000/login",
+            isPopup: true,
+            loginButton: {
+                color: 'green',
+                type: 3,
+                height: '50'
+            }
+        });
+        naverLogin.init();
+    };
+    // 로직
+    const UserProfile = () => {
+        window.location.href.includes('access_token') && GetUser();
+        function GetUser() {
+            const location = window.location.href.split('=')[1];
+            const form_data = new FormData();
+        
+            const item:any = {
+                token: location.split('&')[0],
+            };
+            for (const key in item) {
+                form_data.append(key, item[key]);
+            }
+            fetch(${""}, {
+                method: 'POST',
+                body: form_data,
+            }).then((res) => res.json())
+                .then((resjson) => {
+                if (resjson.responseCode == '403') {
+                    // 사용자가 없으니 회원가입 창으로
+                } else if (resjson.responseCode == '200') {
+                    // 로그인이 되었으니 이 후 process 로 이동
+                }
+                }).catch((err) => console.log(err));
+        }
+    };
+    // 실행
+    const NaverLogin = () => {
+        Naver();
+        UserProfile();
+    }
+ */
