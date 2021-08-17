@@ -13,8 +13,13 @@ function ProductRegister() {
     }
 
     return (
-        <div className={styles.app}>
-            <button onClick={goToHome}> 홈으로가기 </button>
+        <div className={styles.header}>
+            <div className={styles.header_left}>
+                <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
+            </div>
+            <div className={styles.title}>
+                <h1 className={styles.title_h1}>Lend</h1>
+            </div>
         </div>
     );
 }
