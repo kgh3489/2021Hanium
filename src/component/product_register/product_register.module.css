@@ -1,3 +1,20 @@
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+/* 스크롤바 디자인 */
+.content::-webkit-scrollbar {
+    width: 0.15em;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 1em;
+}
+
+/* Header */
 .header {
     display: flex;
     justify-content: left;
@@ -5,7 +22,7 @@
     width: 100%;
     height: 3.2rem;
     background: skyblue;
-    color: white;
+    color: snow;
     border-bottom: 1px solid lightgray;
     margin: 0;
     padding: 0;
@@ -13,6 +30,62 @@
     top: 0;
 }
 
+.gotoHome {
+    color: snow;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+}
 .title {
-    padding-left: 7.8rem;
+    padding-left: 5rem;
+}
+
+/* Content */
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+/* 사진 추가 */
+.product_photo {
+    width: 100%;
+    height: 200px;
+    background-color: antiquewhite;
+    margin-top: 5px;
+}
+
+.photo_input {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* 내용 추가 */
+.input_content {
+    width: 100%;
+    height: 120px;
+    background-color: lightgrey;
+    margin-top: 5px;
+}
+
+/* 상품 제출 */
+.product_submit {
+    display: flex;
+    width: 100%;
+}
+
+.submitBtn {
+    background-color: lightskyblue;
+    color: snow;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 20rem;
+    height: 50px;
+    margin: auto;
 }
