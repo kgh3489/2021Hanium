@@ -1,5 +1,5 @@
 import styles from './product_register.module.css';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 function ProductRegister() {
