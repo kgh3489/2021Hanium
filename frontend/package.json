@@ -2,7 +2,8 @@
   "name": "project_b",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://final-bil.github.io/2021Hanium/",
+  "proxy": "http://localhost:8000",
+  "homepage": "https://final-bil.github.io",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@testing-library/jest-dom": "^5.11.4",
@@ -14,11 +15,11 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env NODE_PATH=src/ react-scripts start",
+    "build": "cross-env NODE_PATH=src/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
