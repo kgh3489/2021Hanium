@@ -1,10 +1,17 @@
 import React from 'react';
 import styles from './product_list.module.css';
-import Product from './product_item/product_item'
+import Product from './product_item/product_item';
+import { useHistory } from 'react-router-dom';
+
 
 
 const ProductList = (props) => {
-        
+    const history = useHistory();
+    const goToProductRegister = () => {
+        history.push({
+            pathname: "/product_register"
+        })
+    }
 
 
     return (
@@ -19,7 +26,7 @@ const ProductList = (props) => {
             <Product />
             <Product />
             <Product />
-            <button className={styles.float}>
+            <button className={styles.float} onClick={goToProductRegister}>
                 <i className="fas fa-plus"></i>
             </button>
         </section>
