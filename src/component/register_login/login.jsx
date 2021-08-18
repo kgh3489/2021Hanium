@@ -9,7 +9,7 @@ const Login = (props) => {
     
     const goToHome = () => {
         history.push({
-            pathname: "/2021Hanium"
+            pathname: "/"
         })
     }
     

@@ -11,7 +11,7 @@ function App() {
     <div className={styles.app}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/2021Hanium">
+          <Route exact path="/">
             <Header />
             <ProductList />
             <Footer />

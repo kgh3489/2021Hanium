@@ -8,7 +8,7 @@ function ProductRegister() {
     
     const goToHome = () => {
         history.push({
-            pathname: "/2021Hanium"
+            pathname: "/"
         })
     }
 
