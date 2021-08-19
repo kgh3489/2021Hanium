@@ -51,16 +51,19 @@ const Login = (props) => {
             <div className={styles.form}>
                 <div className={styles.form_group}>
                     <label htmlFor="username">아이디</label>
-                    <input type="text" name="username" placeholder="ID" />
+                    <input type="text" name="username" placeholder="아이디를 입력해주세요" />
                 </div>
                 <div className={styles.form_group}>
-                    <label htmlFor="password">패스워드</label>
-                    <input type="password" name="password" placeholder="Password" />
+                    <label htmlFor="password">비밀번호</label>
+                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" />
                 </div>
             </div>
             <div className={styles.btns}>
                 <button className={styles.login_btn}>로그인</button>
                 <button className={styles.register_btn}>회원가입</button>
+            </div>
+            <div className={styles.loginSeperate}>
+                <hr />
             </div>
             <div id="naverIdLogin" className={styles.login_sns}></div>   
         </div>
