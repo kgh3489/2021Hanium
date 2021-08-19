@@ -8,6 +8,8 @@
 
 /* 헤더 */
 .header {
+    width: 100%;
+    height: 3.2rem;
     display: flex;
     flex-direction: row;
     background-color: skyblue;
@@ -15,9 +17,9 @@
 
 /* 뒤로가기 버튼 */
 .gotoHome {
-    font-size: 1.2em;
-    color: white;
-    cursor: pointer;
+    color: snow;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
 }
 
 /* 상단배너 */
