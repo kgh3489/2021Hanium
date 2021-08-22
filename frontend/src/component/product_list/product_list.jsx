@@ -37,7 +37,7 @@ const ProductList = (props) => {
                     />
                 )
             }
-            <button className={styles.float}>
+            <button onClick={goToProductRegister} className={styles.float}>
                 <i className="fas fa-plus"></i>
             </button>
         </section>

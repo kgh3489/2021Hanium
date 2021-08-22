@@ -27,7 +27,7 @@ function ProductRegister() {
             <div className={styles.content}>
                 {/* Photo */}
                 <div className={styles.product_photo}>
-                    <input type="file"/>
+                    {/* <input type="file"/> */}
                     <button className={styles.photo_inputBtn}>사진 추가</button>
                 </div>
                 {/* Product Input */}
@@ -39,13 +39,19 @@ function ProductRegister() {
                         <option value="">MTV</option>
                         <option value="">로드</option>
                     </select>
-                    <input type="text" name="productPrice" placeholder="상품 가격" />
-                    <input  type="text" placeholder="상품의 상세 설명을입력하세요" />
+                    <div className={styles.priceDiv}>
+                        <input className={styles.productHourPrice} type="text" name="productHourPrice" placeholder="상품 가격 (1시간 당)" />
+                        <input className={styles.productDayPrice} type="text" name="productDayPrice" placeholder="상품 가격 (1일 당)" />
+                    </div>
+            
+                    <input className={styles.productDesc} type="text" 
+                    placeholder="상품의 상세 설명을입력하세요" />
+                    {/* Submit */}
+                    <div className={styles.product_submit}>
+                        <button className={styles.submitBtn}>상품등록하기</button>
+                    </div>
                 </div>
-                {/* Submit */}
-                <div className={styles.product_submit}>
-                    <button className={styles.submitBtn}>상품등록하기</button>
-                </div>
+                
                 
             </div>
         </div>
