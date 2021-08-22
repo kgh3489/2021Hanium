@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './component/register_login/login';
 import ProductRegister from './component/product_register/product_register';
 import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
+import SignUp from './component/register_login/signUp';
 
 function App({kakaoAuthService}) {
   return (
@@ -27,6 +28,10 @@ function App({kakaoAuthService}) {
           </Route>
           <Route exact path="/oauth/kakao">
             <KakaoAuthRedirect kakaoAuthService={kakaoAuthService}/>
+          </Route>
+
+          <Route exact path="/signUp">
+            <SignUp />
           </Route>
 
 

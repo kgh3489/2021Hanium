@@ -13,6 +13,12 @@ const Login = (props) => {
             pathname: "/"
         })
     }
+    const goToSignUp = () => {
+        history.push({
+            pathname: "/signUp"
+        })
+    }
+
     
     // 네이버 로그인
     const {naver} = window;
@@ -61,7 +67,7 @@ const Login = (props) => {
             </div>
             <div className={styles.btns}>
                 <button className={styles.login_btn}>로그인</button>
-                <button className={styles.register_btn}>회원가입</button>
+                <button className={styles.register_btn} onClick={goToSignUp}>회원가입</button>
             </div>
             <div className={styles.loginSeperate}>
                 <hr />
