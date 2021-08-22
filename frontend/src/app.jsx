@@ -5,8 +5,9 @@ import ProductList from './component/product_list/product_list';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './component/register_login/login';
 import ProductRegister from './component/product_register/product_register';
+import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
 
-function App() {
+function App({kakaoAuthService}) {
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -24,6 +25,11 @@ function App() {
           <Route exact path="/product_register">
             <ProductRegister />
           </Route>
+          <Route exact path="/oauth/kakao">
+            <KakaoAuthRedirect kakaoAuthService={kakaoAuthService}/>
+          </Route>
+
+
         </Switch>
       </BrowserRouter>
     </div>

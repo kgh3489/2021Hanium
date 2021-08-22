@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import styles from './login.module.css';
+import { KakaoAuth } from '../../service/kakaoAuth';
 
 const Login = (props) => {
     
@@ -20,7 +21,7 @@ const Login = (props) => {
             clientId: "aLUPHGNIXs0WoC2mVxqX",
             callbackUrl: "http://localhost:3000/login", 
             isPopup: false, // popup 형식으로 띄울것인지 설정
-            loginButton: { color: 'white', type: 3, height: '50' }, //버튼의 스타일, 타입, 크기를 지정
+            loginButton: { color: 'white', type: 3, height: '55' }, //버튼의 스타일, 타입, 크기를 지정
         });
         naverLogin.init();
     };
@@ -65,7 +66,14 @@ const Login = (props) => {
             <div className={styles.loginSeperate}>
                 <hr />
             </div>
-            <div id="naverIdLogin" className={styles.login_sns}></div>   
+            <div className={styles.login_sns}>
+                <div id="naverIdLogin" className={styles.login_sns}></div>  
+                <a href={KakaoAuth}>
+                    <button className={styles.login_sns}>
+                        <img src="/images/kakao_login.png" alt="kakao_login" />
+                    </button>
+                </a>
+            </div>
         </div>
     )
 };

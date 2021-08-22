@@ -1,28 +1,31 @@
 import React from 'react';
 import styles from './product_item.module.css';
 
-const Product_item = (props) => {
-            
+const Product = ({product}) => {
+        
+
 
 
     return (
         <div className={styles.product_item}>
             <div className={styles.imagesec}>
-                <i className="fas fa-bicycle"></i>
+                <img className={styles.bycle_img} src={product.img_url} alt="" />
             </div>
             <div className={styles.descsec}>
                 <div className={styles.product_title}>
-                    <span>자전거 이름</span>
+                    <span>{product.product_name}</span>
                 </div>
                 <div className={styles.product_desc}>
-                    <span>이곳은 상품의 상세설명란입니다. 이곳은 상품의 상세설명란입니다.이곳은 상품의 상세설명란입니다.</span>
+                    <span>{product.product_description}</span>
                 </div>
                 <div className={styles.product_price}>
-                    <span>판매자 / 100,000</span>
+                    <span className={styles.product_seller}>판매자 : {product.member} </span>
+                    <span>가격: {product.rent_day}일 / </span>
+                    <span>{product.price_rent_day}원</span>
                 </div>
             </div>
         </div>
     )
 };
 
-export default Product_item;
+export default Product;
