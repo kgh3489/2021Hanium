@@ -34,7 +34,7 @@ function ProductRegister() {
                 <div className={styles.input_content}>
                     <input className={styles.productName} type="text" placeholder="상품 이름" />
                     <select name="" className={styles.bikeStyle}>
-                        <option value="">--자전거 종류--</option>
+                        <option value="">-- 자전거 종류 --</option>
                         <option value="">하이브리드</option>
                         <option value="">MTV</option>
                         <option value="">로드</option>
@@ -44,7 +44,7 @@ function ProductRegister() {
                         <input className={styles.productDayPrice} type="text" name="productDayPrice" placeholder="상품 가격 (1일 당)" />
                     </div>
             
-                    <input className={styles.productDesc} type="text" 
+                    <textarea className={styles.productDesc} type="text" 
                     placeholder="상품의 상세 설명을입력하세요" />
                     {/* Submit */}
                     <div className={styles.product_submit}>
