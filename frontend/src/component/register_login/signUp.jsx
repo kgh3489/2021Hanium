@@ -37,6 +37,20 @@ const SignUp = (props) => {
                     return alert('전화번호 형식이 올바르지 않습니다. ex)01012345678');
                 }
             }
+            // axios({
+            //     method: 'post',
+            //     url: '/api/user',
+            //     data: JSON.stringify({
+            //         username: signUpdata.username,
+            //         password: signUpdata.password,
+            //         nickname: signUpdata.nickname,
+            //         phone: signUpdata.phone,
+            //     }),
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     }
+            // })
+
 
             alert(`회원가입 완료(연습)!
                 id: ${signUpdata.id}
