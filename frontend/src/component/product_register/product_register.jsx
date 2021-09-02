@@ -1,9 +1,11 @@
+import KakaoAPI from './kakaoAPI';
 import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
-
+/* import axios from 'axios';
+import { useState, useEffect } from 'react'; */
 
 function ProductRegister() {
-    
+    // 라우터
     const history = useHistory();
     
     const goToHome = () => {
@@ -11,6 +13,14 @@ function ProductRegister() {
             pathname: "/"
         })
     }
+    
+    /* // 공공지도 API
+    useEffect(() => {
+        const fetchEvents = async () => {
+            const res = await axios.get("http://api.vworld.kr/req/data");
+            console.log(res);
+        }
+    }) */
 
     return (
         <div className={styles.container}>
@@ -43,9 +53,9 @@ function ProductRegister() {
                         <input className={styles.productHourPrice} type="text" name="productHourPrice" placeholder="상품 가격 (1시간 당)" />
                         <input className={styles.productDayPrice} type="text" name="productDayPrice" placeholder="상품 가격 (1일 당)" />
                     </div>
-            
                     <textarea className={styles.productDesc} type="text" 
                     placeholder="상품의 상세 설명을입력하세요" />
+                    <KakaoAPI />
                     {/* Submit */}
                     <div className={styles.product_submit}>
                         <button className={styles.submitBtn}>상품등록하기</button>
