@@ -1,4 +1,3 @@
-// import styles from './kakaoAPI.module.css';
 /*global kakao*/
 import React, {useEffect} from 'react';
 
