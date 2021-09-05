@@ -61,6 +61,10 @@
     margin-top: 5px;
 }
 
+.imgInput {
+    display: none;
+}
+
 .photo_inputBtn {
     width: 100px;
     height: 100px;
@@ -133,6 +137,10 @@
     resize: none;
     padding: 3px 10px;
 } 
+
+.KakaoAPI {
+    margin-left: 10px;
+}
 
 /* 상품 제출 */
 .product_submit {
