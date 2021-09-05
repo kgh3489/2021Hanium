@@ -2,7 +2,7 @@ import KakaoAPI from './kakaoAPI';
 import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function ProductRegister() {
     // 라우터
@@ -16,7 +16,7 @@ function ProductRegister() {
     // 이미지
     const [imgBase64, setImgBase64] = useState([]);
     const [imgFile, setImgFile] = useState(null);
-
+    
     const handleChangeFile = (event) => {
         console.log(event.target.files);
         setImgFile(event.target.files);
@@ -44,6 +44,14 @@ function ProductRegister() {
         }
     }
 
+    // 이미지 인풋과 사진 추가 버튼 연결
+    const inputImgRef = useRef();
+
+    const btnChange = (e) => {
+        e.preventDefault();
+        inputImgRef.current.click();
+    }
+
 
     return (
         <div className={styles.container}>
@@ -61,8 +69,8 @@ function ProductRegister() {
                 {/* Photo */}
                 <div className={styles.product_photo}>
                     {/* <input type="file"/> */}
-                    <input onChange={handleChangeFile} /* style={{display: "none"}} */ type="file" className="imgInput" id="file" accept="image/*" multiple="multiple"/>
-                    <button className={styles.photo_inputBtn}>사진 추가</button>
+                    <input ref={inputImgRef} onChange={handleChangeFile} style={{display: "none"}} type="file" className="imgInput" id="file" accept="image/*" multiple="multiple"/>
+                    <button onClick={btnChange} className={styles.photo_inputBtn}>사진 추가</button>
                 </div>
                 {/* Product Input */}
                 <div className={styles.input_content}>
