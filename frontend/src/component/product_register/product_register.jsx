@@ -1,8 +1,7 @@
 import KakaoAPI from './kakaoAPI';
 import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 function ProductRegister() {
     // 라우터
