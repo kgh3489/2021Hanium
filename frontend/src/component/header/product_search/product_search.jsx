@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './product_search.module.css';
 
 export default function Product_search({toggleMenu}) {
@@ -8,6 +8,9 @@ export default function Product_search({toggleMenu}) {
             toggleMenu();
         };
     }
+
+    const[products, setProducts] = useState([]);
+
 
     return (
         <div className={styles.containerSearch} onClick={onMenutoggle}>

@@ -5,14 +5,15 @@ import ProductSearch from './product_search/product_search';
 
 const Header = (props) => {
     
+    // 토글메뉴 
     const[isMenuOpenM,setMenuOpenM] = useState({menuOpenM:false});
     const[isMenuOpenS,setMenuOpenS] = useState({menuOpenS:false});
-    // const[show,setShow] = useState(false);
 
+    // 로그인
     const toggleMenuLogin = () => {
         setMenuOpenM({menuOpenM:!isMenuOpenM.menuOpenM});
     }
-
+    // 검색창
     const toggleMenuSearch = () => {
         setMenuOpenS({menuOpenS:!isMenuOpenS.menuOpenS});
     }

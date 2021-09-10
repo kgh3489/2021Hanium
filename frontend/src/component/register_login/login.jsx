@@ -53,7 +53,7 @@ const Login = (props) => {
                 <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
             </div>
             <div className={styles.banner}>
-                <img className={styles.logo} src="/images/logo.png" alt="logo" />
+                <img className={styles.logo} src={process.env.PUBLIC_URL + "/static/logo.png"} alt="logo" />
             </div>
             <div className={styles.form}>
                 <div className={styles.form_group}>
@@ -76,7 +76,7 @@ const Login = (props) => {
                 <div id="naverIdLogin" className={styles.login_sns}></div>  
                 <a href={KakaoAuth}>
                     <button className={styles.login_sns}>
-                        <img src="/images/kakao_login.png" alt="kakao_login" />
+                        <img src="/static/kakao_login.png" alt="kakao_login" />
                     </button>
                 </a>
             </div>
