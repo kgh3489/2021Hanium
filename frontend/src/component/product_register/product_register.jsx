@@ -51,7 +51,6 @@ function ProductRegister() {
         inputImgRef.current.click();
     }
 
-
     return (
         <div className={styles.container}>
             {/* Header */}
@@ -67,14 +66,14 @@ function ProductRegister() {
             <div className={styles.content}>
                 {/* Photo */}
                 <div className={styles.product_photo}>
-                    {/* <input type="file"/> */}
-                    <input ref={inputImgRef} onChange={handleChangeFile} style={{display: "none"}} type="file" className="imgInput" id="file" accept="image/*" multiple="multiple"/>
+                    <input ref={inputImgRef} onChange={handleChangeFile} style={{display: "none"}} 
+                    type="file" className="imgInput" id="file" accept="image/*" multiple="multiple"/>
                     <button onClick={btnChange} className={styles.photo_inputBtn}>사진 추가</button>
                 </div>
                 {/* Product Input */}
-                <div className={styles.input_content}>
+                <div className={styles.inputContent}>
                     <input className={styles.productName} type="text" placeholder="상품 이름" />
-                    <select name="" className={styles.bikeStyle}>
+                    <select name="bike" className={styles.bikeStyle}>
                         <option value="">-- 자전거 종류 --</option>
                         <option value="">하이브리드</option>
                         <option value="">MTV</option>
@@ -84,16 +83,13 @@ function ProductRegister() {
                         <input className={styles.productHourPrice} type="text" name="productHourPrice" placeholder="상품 가격 (1시간 당)" />
                         <input className={styles.productDayPrice} type="text" name="productDayPrice" placeholder="상품 가격 (1일 당)" />
                     </div>
-                    <textarea className={styles.productDesc} type="text" 
-                    placeholder="상품의 상세 설명을입력하세요" />
+                    <textarea className={styles.productDesc} type="text" placeholder="상품의 상세 설명을입력하세요" />
                     <KakaoAPI />
-                    {/* Submit */}
-                    <div className={styles.product_submit}>
-                        <button type="submit" /* onClick={productSubmit} */ className={styles.submitBtn}>상품등록하기</button>
-                    </div>
                 </div>
-                
-                
+                {/* Submit */}
+                <div className={styles.product_submit}>
+                    <button type="submit" /* onClick={productSubmit} */ className={styles.submitBtn}>상품등록하기</button>
+                </div>
             </div>
         </div>
         

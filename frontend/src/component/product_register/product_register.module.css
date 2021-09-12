@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -45,7 +45,7 @@
 /* Content */
 .content {
     width: 100%;
-    height: 800px;
+    height: 93%;
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -58,7 +58,7 @@
 .product_photo {
     width: 100%;
     height: 180px;
-    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .imgInput {
@@ -79,13 +79,12 @@
 }
 
 /* 내용 추가 */
-.input_content {
+.inputContent {
     width: 100%;
-    height: 80%;
 }
 
 /* Input 전체 css */
-.input_content input {
+.inputContent input {
     height: 36px;
     font-size: 16px;
     border: 0;
@@ -138,15 +137,12 @@
     padding: 3px 10px;
 } 
 
-.KakaoAPI {
-    margin-left: 10px;
-}
-
 /* 상품 제출 */
 .product_submit {
     display: flex;
     width: 100%;
-    margin-top: 20px;
+    height: 30%;
+    margin-top: 10px;
 }
 
 .submitBtn {
@@ -157,6 +153,6 @@
     border-radius: 5px;
     width: 20rem;
     height: 50px;
-    margin: auto;
+    margin: 0 auto;
     cursor: pointer;
 }
