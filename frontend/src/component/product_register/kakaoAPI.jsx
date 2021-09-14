@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, {useEffect} from 'react';
 
-const KakaoAPI = () => {
+const KakaoAPI = (props) => {
 
     useEffect(() => {
         var container = document.getElementById('map'); // 지도를 표시할 div설정
@@ -30,19 +30,25 @@ const KakaoAPI = () => {
                         detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
 
                         var content = '<div class="bAddr"><span class="title">주소정보</span>' + detailAddr + '</div>';
-                        console.log(result[0].address.address_name);
-                        console.log(result[0].address);
+                        //console.log(result[0].address.address_name); // 주소 텍스트 출력
+                        // console.log(result[0].address);
                         // 마커를 클릭한 위치에 표시합니다
                         marker.setPosition(mouseEvent.latLng);
                         marker.setMap(map);
+                        
 
                         // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
+
+                        props.getTextValue(result[0].address.address_name);
+                        
                         
                     }
                 });
             });
+            
+            
 
         // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
         kakao.maps.event.addListener(map, 'idle', function () {
@@ -76,15 +82,18 @@ const KakaoAPI = () => {
 
     }, [])
 
+    
+
     return (
         <div style={{}}>
-            <input id="addressInput" type="text" placeholder="주소를 입력하세요"></input>
+            {/* <input id="addressInput" type="text" placeholder="주소를 입력하세요"></input> */}
             <div
                 id="map"
                 style={{
                     width: "350px",
-                    height: "400px",
-                    borderRadius: "5px"
+                    height: "350px",
+                    borderRadius: "5px",
+                    margin: "0 auto"
                 }}></div>
         </div>
     )

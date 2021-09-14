@@ -16,21 +16,32 @@ const ProductList = (props) => {
     const[products, setProducts] = useState([]);
     
     const loadProducts=() => {
-        return fetch("/data/data_sample.json")
+        return fetch(process.env.PUBLIC_URL + "/static/data_sample.json")
         .then(res => res.json())
     }
+
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         loadProducts()
         .then(prod => setProducts(prod["products"]))
     }, [])
-
+    
 
     return (
         <section className={styles.product_list}>
             {/* <button className={styles.btn_regiprod}>버튼</button> */}
+            <input type="text" placeholder={"임시 검색"} onChange={event =>{setSearchTerm(event.target.value)}} />
             {
-                products.map(product => 
+                products.filter(product=> {
+                    if (searchTerm == "") {
+                        return product
+                    } else if (product.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return product
+                    } else if (product.product_description.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return product
+                    }
+                }).map(product => 
                     <Product 
                         key={product.id}
                         product={product}
