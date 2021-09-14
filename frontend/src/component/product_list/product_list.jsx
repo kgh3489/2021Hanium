@@ -26,7 +26,7 @@ const ProductList = (props) => {
         loadProducts()
         .then(prod => setProducts(prod["products"]))
     }, [])
-
+    
 
     return (
         <section className={styles.product_list}>
@@ -37,6 +37,8 @@ const ProductList = (props) => {
                     if (searchTerm == "") {
                         return product
                     } else if (product.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return product
+                    } else if (product.product_description.toLowerCase().includes(searchTerm.toLowerCase())) {
                         return product
                     }
                 }).map(product => 
