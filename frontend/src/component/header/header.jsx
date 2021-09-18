@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import styles from './header.module.css';
 import HeaderPop from './header_pop/header_pop';
+import ProductSearch from './product_search/product_search';
 
 const Header = (props) => {
     
-    const[isMenuOpen,setMenuOpen] = useState({menuOpen:false});
+    // 토글메뉴 
+    const[isMenuOpenM,setMenuOpenM] = useState({menuOpenM:false});
+    const[isMenuOpenS,setMenuOpenS] = useState({menuOpenS:false});
 
-
-    const toggleMenu = () => {
-        setMenuOpen({menuOpen:!isMenuOpen.menuOpen});
+    // 로그인
+    const toggleMenuLogin = () => {
+        setMenuOpenM({menuOpenM:!isMenuOpenM.menuOpenM});
+    }
+    // 검색창
+    const toggleMenuSearch = () => {
+        setMenuOpenS({menuOpenS:!isMenuOpenS.menuOpenS});
     }
 
 
 
     return (
         <header className={styles.header}>
-            {isMenuOpen.menuOpen && < HeaderPop toggleMenu={toggleMenu}/>}
+            {isMenuOpenM.menuOpenM && < HeaderPop toggleMenu={toggleMenuLogin}/>}
+            
             <div className={styles.header_left}>
-                <button className={`${styles.btn} ${styles.barBtn}`} onClick={toggleMenu}>
+                <button className={`${styles.btn} ${styles.barBtn}`} onClick={toggleMenuLogin}>
                     <i className="fas fa-bars"></i>
                 </button>
             </div>
@@ -25,7 +33,8 @@ const Header = (props) => {
                 <h1 className={styles.title_h1}>Lend</h1>
             </div>
             <div className={styles.header_right}>
-                <button className={`${styles.btn} ${styles.searchBtn}`}><i className="fas fa-search"></i></button>
+                {isMenuOpenS.menuOpenS && < ProductSearch toggleMenu={toggleMenuSearch}/>}
+                <button onClick={toggleMenuSearch} className={`${styles.btn} ${styles.searchBtn}`}><i className="fas fa-search"></i></button>
                 <button className={`${styles.btn} ${styles.filterBtn}`}><i className="fas fa-filter"></i></button>
             </div>
         </header>

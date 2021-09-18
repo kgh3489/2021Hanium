@@ -78,13 +78,14 @@ const KakaoAPI = () => {
 
     return (
         <div style={{}}>
-            <input id="addressInput" type="text" placeholder="주소를 입력하세요"></input>
+            {/* <input id="addressInput" type="text" placeholder="주소를 입력하세요"></input> */}
             <div
                 id="map"
                 style={{
                     width: "350px",
-                    height: "400px",
-                    borderRadius: "5px"
+                    height: "350px",
+                    borderRadius: "5px",
+                    margin: "0 auto"
                 }}></div>
         </div>
     )
