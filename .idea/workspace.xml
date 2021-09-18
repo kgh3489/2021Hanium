@@ -2,41 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6963ec21-2c82-4aa8-8b71-e56307bea6ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/public/data/data_sample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/images/kakao_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/component/kakaoAuthRedirect/kakaoAuthRedirect.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/component/kakaoAuthRedirect/kakaoAuthRedirect.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/component/register_login/signUp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/component/register_login/signUp.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/service/kakaoAuth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/service/kakaoAuth_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/migrations/0002_alter_user_phonenum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/migrations/0003_alter_user_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoreact/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/product_list/product_item/product_item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/product_list/product_item/product_item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/product_list/product_item/product_item.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/product_list/product_item/product_item.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/product_list/product_list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/product_list/product_list.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/product_register/product_register.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/product_register/product_register.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/register_login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/register_login/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/register_login/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/component/register_login/login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/register_login/register.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/component/register_login/register.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sparta/02/mySpartaSNS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RunManager">
@@ -93,6 +69,8 @@
       <updated>1629804101435</updated>
       <workItem from="1629804104133" duration="829000" />
       <workItem from="1630049492267" duration="434000" />
+      <workItem from="1631453931712" duration="51000" />
+      <workItem from="1631454025540" duration="1259000" />
     </task>
     <servers />
   </component>

@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './signUp.module.css';
+import axios from 'axios';
+import CSRFToken from './csrftoken';
 
 const SignUp = (props) => {
     
     
     const history = useHistory();
     const[signUpdata, setSignUpData] = useState({
-        "id": '',
-        "pw": '',
+        "username": '',
+        "password": '',
         "nickname": '',
         "phone": '',
     });
@@ -37,24 +39,24 @@ const SignUp = (props) => {
                     return alert('전화번호 형식이 올바르지 않습니다. ex)01012345678');
                 }
             }
-            // axios({
-            //     method: 'post',
-            //     url: '/api/user',
-            //     data: JSON.stringify({
-            //         username: signUpdata.username,
-            //         password: signUpdata.password,
-            //         nickname: signUpdata.nickname,
-            //         phone: signUpdata.phone,
-            //     }),
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     }
-            // })
+            axios({
+                method: 'post',
+                url: '/user/',
+                data: JSON.stringify({
+                    username: signUpdata.username,
+                    password: signUpdata.password,
+                    nickname: signUpdata.nickname,
+                    phone: signUpdata.phone,
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
 
 
             alert(`회원가입 완료(연습)!
-                id: ${signUpdata.id}
-                pw: ${signUpdata.pw}
+                id: ${signUpdata.username}
+                pw: ${signUpdata.password}
                 닉네임: ${signUpdata.nickname}
                 전화번호: ${signUpdata.phone}
                 `)
@@ -78,13 +80,14 @@ const SignUp = (props) => {
             <h1 className={styles.title}>Lend</h1>
             {/* 회원가입 폼 */}
             <form className={styles.form} onSubmit={handleSubmit}>
+                <CSRFToken />
                 <label className={styles.label}>아이디
-                    <input className={styles.input} type="text" name="id" placeholder='아이디' value={signUpdata.id || ""} onChange={handleChange}></input>
+                    <input className={styles.input} type="text" name="username" placeholder='아이디' value={signUpdata.username || ""} onChange={handleChange}></input>
                 </label>
 
 
                 <label className={styles.label}>비밀번호
-                    <input className={styles.input} type="password" name="pw" placeholder='비밀번호' value={signUpdata.pw || ""} onChange={handleChange}></input>
+                    <input className={styles.input} type="password" name="password" placeholder='비밀번호' value={signUpdata.password || ""} onChange={handleChange}></input>
                 </label>
 
                 <label className={styles.label}>닉네임
