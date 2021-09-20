@@ -30,6 +30,11 @@
 - django 설치 : pip install django
 - django-rest-framework 설치 : pip install django-rest-framework
 - django-cors-headers 설치 : pip install django-cors-headers
+- Pollow 설치 : python -m pip install Pillow
+
+## APP추가 후, 마이그레이션
+py manage.py makemigrations
+py manage.py migrate
 
 ## 프로그램 실행
 
