@@ -3,10 +3,10 @@ import styles from './app.module.css';
 import Footer from './component/footer/footer';
 import ProductList from './component/product_list/product_list';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './component/register_login/login';
+import Login from './component/login_register/login';
 import ProductRegister from './component/product_register/product_register';
 import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
-import SignUp from './component/register_login/signUp';
+import SignUp from './component/login_register/signUp';
 
 function App({kakaoAuthService}) {
   return (

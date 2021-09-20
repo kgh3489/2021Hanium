@@ -54,12 +54,7 @@ const SignUp = (props) => {
             })
 
 
-            alert(`회원가입 완료(연습)!
-                id: ${signUpdata.username}
-                pw: ${signUpdata.password}
-                닉네임: ${signUpdata.nickname}
-                전화번호: ${signUpdata.phone}
-                `)
+            alert(`id: ${signUpdata.username}으로 회원가입 되었습니다.`)
             goToLogin();
         }
     }
