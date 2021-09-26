@@ -12,11 +12,11 @@ const Main = (props) => {
     
     
     return (
-        <>
+        <div className={styles.main}>
             <Header />
             <ProductList />
             <Footer />
-        </>
+        </div>
     );
 
 };

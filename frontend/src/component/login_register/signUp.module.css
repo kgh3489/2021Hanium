@@ -39,6 +39,7 @@
   height: 2rem;
   font-size: 1em;
   color: rgb(54, 54, 54);
+  margin-bottom: 1rem;
 }
 
 .input:focus {
@@ -53,4 +54,5 @@
   border: solid 1px skyblue;
   border-radius: 2px;
   cursor: pointer;
+  margin: 1rem 0;
 }
