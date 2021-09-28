@@ -11,6 +11,12 @@ const HeaderPop = ({toggleMenu}) => {
         })
     }
 
+    const goToMyProfile = () => {
+        history.push({
+            pathname: "/myprofile"
+        })
+    }
+
     const onMenutoggle=(e) => {
         if(e.target.className === styles.left_pop) {
             toggleMenu();
@@ -34,9 +40,24 @@ const HeaderPop = ({toggleMenu}) => {
                         </div>
                         <div className={styles.profile_right}>
                             <span className={styles.nickName}>닉네임</span>
-                            <button className={styles.move_profile_page}><span>내 프로필로 이동 〉</span></button>
+                            <button className={styles.move_profile_page} onClick={goToMyProfile}><span>내 프로필 수정 </span></button>
                         </div>
-
+                    </div>
+                    <div className={styles.pop_profilemenu}>
+                        <div className={styles.profilemenu_left}>
+                            <button className={styles.profilemenuImg}><i className="fas fa-archive"></i></button>
+                        </div>
+                        <div className={styles.profilemenu_right}>
+                            <span className={styles.myProduct}>내 등록 상품</span>                        
+                        </div>
+                    </div>
+                    <div className={styles.pop_profilemenu}>
+                        <div className={styles.profilemenu_left}>
+                            <button className={styles.profilemenuImg}><i className="fas fa-comments"></i></button>
+                        </div>
+                        <div className={styles.profilemenu_right}>
+                            <span className={styles.myProduct}>채팅</span>                        
+                        </div>
                     </div>
             </div>  
         </div>
@@ -44,3 +65,5 @@ const HeaderPop = ({toggleMenu}) => {
 };
 
 export default HeaderPop;
+
+// className={styles.}
