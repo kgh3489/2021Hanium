@@ -7,6 +7,7 @@ import Login from './component/login_register/login';
 import ProductRegister from './component/product_register/product_register';
 import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
 import SignUp from './component/login_register/signUp';
+import MyProfile from './component/header/myprofile/myprofile';
 
 function App({kakaoAuthService}) {
   return (
@@ -21,6 +22,10 @@ function App({kakaoAuthService}) {
 
           <Route exact path="/login">
             <Login />
+          </Route>
+
+          <Route exact path="/myprofile">
+            <MyProfile />
           </Route>
 
           <Route exact path="/product_register">

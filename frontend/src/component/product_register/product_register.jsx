@@ -15,11 +15,12 @@ function ProductRegister() {
     }
     // 이미지
     const [imgBase64, setImgBase64] = useState([]); // 미리보기
-    const [imgFile, setImgFile] = useState(null); // 사진 파일
+    const [imgFile, setImgFile] = useState([]); // 사진 파일
     
     const handleChangeFile = (e) => {
-        console.log(e.target.files);
+        // console.log(e.target.files);
         setImgFile(e.target.files);
+        setImgBase64([]);
         for(var i = 0; i < e.target.files.length; i++) {
             let reader = new FileReader();
             // 1. 파일을 읽어 버퍼에 저장
@@ -29,14 +30,13 @@ function ProductRegister() {
             reader.onloadend = () => {
                 // 2. 읽기가 완료되면 아래 코드 실행
                 const base64 = reader.result;
-                console.log(base64.base64)
+                console.log(base64);
+                imgFile.push(base64);
                 if (base64) {
                     var base64Sub = base64.toString();
                     setImgBase64(imgBase64 => [...imgBase64, base64Sub]);
                 }
             }
-            console.log(imgBase64);
-            console.log(imgFile);
         }
     }
 
