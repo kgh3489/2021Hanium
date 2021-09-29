@@ -9,8 +9,7 @@
 
 from django.core import serializers
 from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.decorators import api_view 
+from rest_framework.views import APIView 
 from rest_framework.response import Response 
 from django.http.response import HttpResponse 
 from .models import UserModel 
@@ -29,7 +28,7 @@ class Userinfo(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_404_BAD_REQUEST)
-        
+
 # 해당 html을 띄워주는 함수
 # def sign_up_view(request):
 #     if request.method == 'GET':

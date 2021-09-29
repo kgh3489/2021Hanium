@@ -97,8 +97,10 @@ STATIC_URL = '/static/'
 #경로 추가
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static'),
-    os.path.join(BASE_DIR, 'images'),
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #image
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
