@@ -3,6 +3,8 @@ import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
+import CSRFToken from '../login_register/csrftoken';
+
 
 function ProductRegister() {
     // 라우터
@@ -38,7 +40,12 @@ function ProductRegister() {
                 }
             }
         }
+        setProductData({
+            ...productData,
+            [e.target.name]: e.target.value,
+        })
     }
+
 
     
 
@@ -57,38 +64,47 @@ function ProductRegister() {
     }
     // 상품
     const[productData, setProductData] = useState({
-        "productPic": { imgFile },
-        "productName": '',
-        "productBike": '',
-        "productHourPrice": '',
-        "productDayPrice": '',
-        "productDesc": '',
-        "productPlace": { textValue },
+        "product_img": { imgFile },
+        "product_name": '',
+        "product_type": '',
+        "product_lend_h": '',
+        "product_lend_d": '',
+        "product_detail": '',
+        "product_location": { textValue },
     });
 
-    /* // 전송
-    const WriteBoard = async () => {
-    const fd = new FormData();
-    Object.values(imgFile).forEach((file) => fd.append("file", file));
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    // fd.append("comment", comment);
+        const productArr = Object.entries(productData);
 
-    await axios
-        .post('http://http://127.0.0.1:8000//product_register', fd, {
+        axios({
+            method: 'post',
+            url: '/product/',
+            data: JSON.stringify({
+                product_img: productData.product_img,
+                product_name: productData.product_name,
+                product_type: productData.product_type,
+                product_lend_h: productData.product_lend_h,
+                product_lend_d: productData.product_lend_d,
+                product_detail: productData.product_detail,
+                product_location: productData.product_location,
+            }),
             headers: {
-                "Content-Type": `multipart/form-data; `
+                "Content-Type": "application/json",
             }
         })
-        .then((response) => {
-            if (response.data) {
-                console.log(response.data)
-                history.push("/test1");
-            }
+
+        alert(`'${productData.product_name}'제목으로 상품등록 완료!`)
+        // goToHome();
+    }
+
+    const handleChange = (e) => { //요소에 변화가 생기면 실행
+        setProductData({
+            ...productData,
+            [e.target.name]: e.target.value,
         })
-        .catch((error) => {
-            // 예외 처리
-        })
-    } */
+    }
 
 
 
@@ -104,11 +120,11 @@ function ProductRegister() {
                 </div>
             </div>
             {/* Content */}
-            <form className={styles.content}>
+            <form className={styles.content} onSubmit={handleSubmit}>
                 {/* Photo */}
                 <div className={styles.product_photo}>
                     <input ref={inputImgRef}  style={{display: "none"}} onChange={handleChangeFile}
-                    type="file" className="imgInput" name="productPic" accept="image/*" multiple="multiple"/>
+                    type="file" className="imgInput" name="product_img" accept="image/*" multiple="multiple"/>
                     <button onClick={btnChange} className={styles.photo_inputBtn}>사진 추가</button>
                 </div>
                 {imgBase64.map((item) => {
@@ -125,18 +141,22 @@ function ProductRegister() {
                 })}
                 {/* Product Input */}
                 <div className={styles.inputContent}>
-                    <input className={styles.productName} name="productName" type="text" placeholder="상품 이름" />
-                    <select name="productBike" className={styles.bikeStyle}>
+                    <input className={styles.productName} name="product_name" type="text" placeholder="상품 이름"
+                    value={productData.product_name || ""} onChange={handleChange} />
+                    <select name="product_type" className={styles.bikeStyle} value={productData.product_type || ""} onChange={handleChange}>
                         <option value="">-- 자전거 종류 --</option>
                         <option value="">하이브리드</option>
                         <option value="">MTV</option>
                         <option value="">로드</option>
                     </select>
                     <div className={styles.priceDiv}>
-                        <input className={styles.productHourPrice} type="text" name="productHourPrice" placeholder="상품 가격 (1시간 당)" />
-                        <input className={styles.productDayPrice} type="text" name="productDayPrice" placeholder="상품 가격 (1일 당)" />
+                        <input className={styles.productHourPrice} type="text" name="product_lend_h" placeholder="상품 가격 (1시간 당)" 
+                        value={productData.product_lend_h || ""} onChange={handleChange}/>
+                        <input className={styles.productDayPrice} type="text" name="product_lend_d" placeholder="상품 가격 (1일 당)" 
+                        value={productData.product_lend_d || ""} onChange={handleChange}/>
                     </div>
-                    <textarea className={styles.productDesc} name="productDesc" type="text" placeholder="상품의 상세 설명을입력하세요" />
+                    <textarea className={styles.productDesc} name="product_detail" type="text" placeholder="상품의 상세 설명을입력하세요" 
+                    value={productData.product_detail || ""} onChange={handleChange}/>
                     <KakaoAPI getTextValue={getTextValue} />
                     <span>당신의 주소는 { textValue }</span>
                 </div>
