@@ -5,12 +5,14 @@ import styles from './header_pop.module.css';
 const HeaderPop = ({toggleMenu}) => {
 
     const history = useHistory();
+    //로그인 화면으로 이동
     const goToLogin = () => {
         history.push({
             pathname: "/login"
         })
     }
 
+    //좌측 사이드 메뉴 토글
     const onMenutoggle=(e) => {
         if(e.target.className === styles.left_pop) {
             toggleMenu();
