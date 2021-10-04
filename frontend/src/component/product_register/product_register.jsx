@@ -64,6 +64,10 @@ function ProductRegister() {
 
     const getTextValue = (text) => {
         setTextValue(text);
+        setProductData({
+            ...productData,
+            ["product_location"]: text,
+        })
     }
     // 상품
     const[productData, setProductData] = useState({
@@ -73,7 +77,7 @@ function ProductRegister() {
         "product_lend_h": '',
         "product_lend_d": '',
         "product_detail": '',
-        "product_location": { textValue },
+        "product_location": '',
     });
 
     const handleSubmit = (e) => {
@@ -87,7 +91,7 @@ function ProductRegister() {
         fd.append("product_lend_h", productData.product_lend_h);
         fd.append("product_lend_d", productData.product_lend_d);
         fd.append("product_detail", productData.product_detail);
-        fd.append("product_location", productData.product_location);
+        fd.append("product_location", productData.product_detail);
         console.log(productData);
 
         axios({
@@ -97,18 +101,15 @@ function ProductRegister() {
             headers: {
                 "Content-Type": "multipart/form-data",
             }
-        }).then(function(response) {
-            console.log(response);
-        } )
+        })
 
         if(imgFile == null){
             alert("이미지를 등록 해주세요");
             return false;
         } else {
-            alert(`'${productData.product_name}'제목으로 상품등록 완료!`)
+            alert(`'${productData.product_name}'제목으로 상품등록 완료!`);
+            goToHome();
         }
-
-        // goToHome();
     }
 
     const handleChange = (e) => { //요소에 변화가 생기면 실행
@@ -133,6 +134,8 @@ function ProductRegister() {
             </div>
             {/* Content */}
             <form className={styles.content} onSubmit={handleSubmit}>
+                <KakaoAPI getTextValue={getTextValue} name="product_location" value={productData.product_location || ""} />
+                    <span>당신의 주소는 { textValue }</span>
                 {/* Photo */}
                 <div className={styles.product_photo}>
                     <input ref={inputImgRef}  style={{display: "none"}} onChange={handleChangeFile}
@@ -169,8 +172,7 @@ function ProductRegister() {
                     </div>
                     <textarea className={styles.productDesc} name="product_detail" type="text" placeholder="상품의 상세 설명을입력하세요" 
                     value={productData.product_detail || ""} onChange={handleChange}/>
-                    <KakaoAPI getTextValue={getTextValue} />
-                    <span>당신의 주소는 { textValue }</span>
+                    
                 </div>
                 {/* Submit */}
                 <div className={styles.product_submit}>

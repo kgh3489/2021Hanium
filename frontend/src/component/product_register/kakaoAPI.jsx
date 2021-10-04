@@ -42,6 +42,7 @@ const KakaoAPI = (props) => {
                         infowindow.open(map, marker);
 
                         props.getTextValue(result[0].address.address_name);
+                        // props.handleChange(result[0].address.address_name);
                         
                         
                     }
