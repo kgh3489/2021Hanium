@@ -17,32 +17,35 @@ function ProductRegister() {
     }
     // 이미지
     const [imgBase64, setImgBase64] = useState([]); // 미리보기
-    const [imgFile, setImgFile] = useState([]); // 사진 파일
+    const [imgFile, setImgFile] = useState(null); // 사진 파일
     
     const handleChangeFile = (e) => {
         // console.log(e.target.files);
         setImgFile(e.target.files);
         setImgBase64([]);
         for(var i = 0; i < e.target.files.length; i++) {
-            let reader = new FileReader();
-            // 1. 파일을 읽어 버퍼에 저장
-            reader.readAsDataURL(e.target.files[i]);
+            if (e.target.files[i]) {
+                let reader = new FileReader();
+                // 1. 파일을 읽어 버퍼에 저장
+                reader.readAsDataURL(e.target.files[i]);
 
-            //파일 상태 업데이트
-            reader.onloadend = () => {
-                // 2. 읽기가 완료되면 아래 코드 실행
-                const base64 = reader.result;
-                console.log(base64);
-                imgFile.push(base64);
-                if (base64) {
-                    var base64Sub = base64.toString();
-                    setImgBase64(imgBase64 => [...imgBase64, base64Sub]);
+                //파일 상태 업데이트
+                reader.onloadend = () => {
+                    // 2. 읽기가 완료되면 아래 코드 실행
+                    const base64 = reader.result;
+                    // console.log(base64);
+                    // imgFile.push(base64);
+                    if (base64) {
+                        var base64Sub = base64.toString();
+                        setImgBase64(imgBase64 => [...imgBase64, base64Sub]);
+                        console.log(imgBase64);
+                    }
                 }
             }
         }
         setProductData({
             ...productData,
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.files[0],
         })
     }
 
@@ -64,7 +67,7 @@ function ProductRegister() {
     }
     // 상품
     const[productData, setProductData] = useState({
-        "product_img": { imgFile },
+        "product_img": '',
         "product_name": '',
         "product_type": '',
         "product_lend_h": '',
@@ -76,26 +79,35 @@ function ProductRegister() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const productArr = Object.entries(productData);
+        
+        const fd = new FormData();
+        fd.append("product_img", productData.product_img);
+        fd.append("product_name", productData.product_name);
+        fd.append("product_type", productData.product_type);
+        fd.append("product_lend_h", productData.product_lend_h);
+        fd.append("product_lend_d", productData.product_lend_d);
+        fd.append("product_detail", productData.product_detail);
+        fd.append("product_location", productData.product_location);
+        console.log(productData);
 
         axios({
             method: 'post',
             url: '/product/',
-            data: JSON.stringify({
-                product_img: productData.product_img,
-                product_name: productData.product_name,
-                product_type: productData.product_type,
-                product_lend_h: productData.product_lend_h,
-                product_lend_d: productData.product_lend_d,
-                product_detail: productData.product_detail,
-                product_location: productData.product_location,
-            }),
+            data: fd,
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "multipart/form-data",
             }
-        })
+        }).then(function(response) {
+            console.log(response);
+        } )
 
-        alert(`'${productData.product_name}'제목으로 상품등록 완료!`)
+        if(imgFile == null){
+            alert("이미지를 등록 해주세요");
+            return false;
+        } else {
+            alert(`'${productData.product_name}'제목으로 상품등록 완료!`)
+        }
+
         // goToHome();
     }
 
@@ -128,26 +140,26 @@ function ProductRegister() {
                     <button onClick={btnChange} className={styles.photo_inputBtn}>사진 추가</button>
                 </div>
                 {imgBase64.map((item) => {
-                    return(
-                        <img
-                        key='id1'
-                        className=""
-                        src={item}
-                        alt="First slide" // eslint-disable-next-line
-                        style={{width:"50%", height:"350px", display:"flex",  flexDirection: "row"}}
-                        />
-                        
-                    )
+                        return(
+                            <img
+                            className="imgBox"
+                            key=""
+                            src={item}
+                            alt="First slide" 
+                            style={{width:"50%", height:"350px", display:"flex",  flexDirection: "row"}}
+                            />
+                        )
                 })}
+                
                 {/* Product Input */}
                 <div className={styles.inputContent}>
                     <input className={styles.productName} name="product_name" type="text" placeholder="상품 이름"
                     value={productData.product_name || ""} onChange={handleChange} />
-                    <select name="product_type" className={styles.bikeStyle} value={productData.product_type || ""} onChange={handleChange}>
-                        <option value="">-- 자전거 종류 --</option>
-                        <option value="">하이브리드</option>
-                        <option value="">MTV</option>
-                        <option value="">로드</option>
+                    <select name="product_type" className={styles.bikeStyle} value= {productData.product_type || ""} onChange={handleChange}>
+                        <option>-- 자전거 종류 --</option>
+                        <option>하이브리드</option>
+                        <option>MTV</option>
+                        <option>로드</option>
                     </select>
                     <div className={styles.priceDiv}>
                         <input className={styles.productHourPrice} type="text" name="product_lend_h" placeholder="상품 가격 (1시간 당)" 
