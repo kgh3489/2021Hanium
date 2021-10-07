@@ -26,10 +26,10 @@ const KakaoAPI = (props) => {
                 searchDetailAddrFromCoords(mouseEvent.latLng, function (result, status) {
                     if (status === kakao.maps.services.Status.OK) {
                         var detailAddr = !!result[0].road_address
-                            ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+                            ? '<div >도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
                         detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
 
-                        var content = '<div class="bAddr"><span class="title">주소정보</span>' + detailAddr + '</div>';
+                        var content = '<div class="bAddr"><span class="title">당신의 주소는</span>' + detailAddr + '</div>';
                         //console.log(result[0].address.address_name); // 주소 텍스트 출력
                         // console.log(result[0].address);
                         // 마커를 클릭한 위치에 표시합니다
@@ -86,14 +86,20 @@ const KakaoAPI = (props) => {
 
     return (
         <div style={{}}>
-            {/* <input id="addressInput" type="text" placeholder="주소를 입력하세요"></input> */}
+            <input id="addressInput" type="text" placeholder="주소를 입력하세요"
+            style={{
+                width: "342px",
+                height: "30px",
+                margin: "0 auto",
+                padding: "3px"
+            }}></input>
             <div
                 id="map"
                 style={{
                     width: "350px",
-                    height: "350px",
+                    height: "300px",
                     borderRadius: "5px",
-                    margin: "0 auto"
+                    margin: "0 auto",
                 }}></div>
         </div>
     )

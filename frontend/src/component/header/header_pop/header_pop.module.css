@@ -97,6 +97,7 @@
   padding: 0.5rem 0;
   font-size: 1.1em;
   /* background-color: red; */
+  cursor: pointer;
 }
 
 .profilemenu_left {

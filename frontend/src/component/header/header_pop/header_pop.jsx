@@ -11,9 +11,9 @@ const HeaderPop = ({toggleMenu}) => {
         })
     }
 
-    const goToMyProfile = () => {
+    const goToMyProduct = () => {
         history.push({
-            pathname: "/myprofile"
+            pathname: "/myproduct"
         })
     }
 
@@ -40,10 +40,10 @@ const HeaderPop = ({toggleMenu}) => {
                         </div>
                         <div className={styles.profile_right}>
                             <span className={styles.nickName}>닉네임</span>
-                            <button className={styles.move_profile_page} onClick={goToMyProfile}><span>내 프로필 수정 </span></button>
+                            <button className={styles.move_profile_page}><span>내 프로필 수정 </span></button>
                         </div>
                     </div>
-                    <div className={styles.pop_profilemenu}>
+                    <div onClick={goToMyProduct} className={styles.pop_profilemenu}>
                         <div className={styles.profilemenu_left}>
                             <button className={styles.profilemenuImg}><i className="fas fa-archive"></i></button>
                         </div>

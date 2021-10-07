@@ -1,10 +1,8 @@
 import KakaoAPI from './kakaoAPI';
 import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import axios from 'axios';
-import CSRFToken from '../login_register/csrftoken';
-
 
 function ProductRegister() {
     // 라우터
@@ -135,7 +133,7 @@ function ProductRegister() {
             {/* Content */}
             <form className={styles.content} onSubmit={handleSubmit}>
                 <KakaoAPI getTextValue={getTextValue} name="product_location" value={productData.product_location || ""} />
-                    <span>당신의 주소는 { textValue }</span>
+                    {/* <span>당신의 주소는 { textValue }</span> */}
                 {/* Photo */}
                 <div className={styles.product_photo}>
                     <input ref={inputImgRef}  style={{display: "none"}} onChange={handleChangeFile}
