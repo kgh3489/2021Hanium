@@ -5,6 +5,7 @@ import ProductRegister from './component/product_register/product_register';
 import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
 import SignUp from './component/login_register/signUp';
 import Main from './component/main/main';
+import Search from './component/search/search';
 
 function App({kakaoAuthService}) {
   return (
@@ -37,6 +38,10 @@ function App({kakaoAuthService}) {
             <SignUp />
           </Route>
 
+          {/* 검색 페이지 */}
+          <Route exact path="/search">
+            <Search />
+          </Route>
 
         </Switch>
       </BrowserRouter>
