@@ -1,25 +1,25 @@
-import Header from './component/header/header';
 import styles from './app.module.css';
-import Footer from './component/footer/footer';
-import ProductList from './component/product_list/product_list';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './component/login_register/login';
 import ProductRegister from './component/product_register/product_register';
 import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
 import SignUp from './component/login_register/signUp';
 import MyProduct from './component/header/myproduct/myproduct';
+import Main from './component/main/main';
+import Search from './component/search/search';
 
 function App({kakaoAuthService}) {
   return (
     <div className={styles.app}>
       <BrowserRouter>
         <Switch>
+
+          {/* 메인 페이지 */}
           <Route exact path="/">
-            <Header />
-            <ProductList />
-            <Footer />
+            <Main />
           </Route>
 
+          {/* 로그인 페이지 */}
           <Route exact path="/login">
             <Login />
           </Route>
@@ -28,17 +28,25 @@ function App({kakaoAuthService}) {
             <MyProduct />
           </Route>
 
+          {/* 상품 등록 페이지 */}
           <Route exact path="/product_register">
             <ProductRegister />
           </Route>
+
+          {/* 카카오 로그인 페이지 */}
           <Route exact path="/oauth/kakao">
             <KakaoAuthRedirect kakaoAuthService={kakaoAuthService}/>
           </Route>
 
+          {/* 회원가입 페이지 */}
           <Route exact path="/signUp">
             <SignUp />
           </Route>
 
+          {/* 검색 페이지 */}
+          <Route exact path="/search">
+            <Search />
+          </Route>
 
         </Switch>
       </BrowserRouter>

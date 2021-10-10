@@ -4,13 +4,7 @@ button {
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
   margin: 0 auto;
-  height: 100vh;
-  position: relative;
 }
 
 /* 반응형 | 미디어 쿼리 */
@@ -19,5 +13,3 @@ button {
     width: 375px;
   }
 }
-
-

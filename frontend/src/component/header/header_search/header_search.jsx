@@ -1,20 +1,24 @@
-import styles from './product_search.module.css';
+import { useRef } from 'react';
+import styles from './header_search.module.css';
 
+const Header_search = ({toggleMenu}) => {
 
-export default function Product_search({toggleMenu}) {
-    
+    //검색메뉴 토글
     const onMenutoggle = (e) => {
         if(e.target.className === styles.containerSearch) {
             toggleMenu();
         };
     }
-
+    
+    //검색어
+    const inputRef = useRef();
 
 
     return (
         <div className={styles.containerSearch} onClick={onMenutoggle}>
             <div className={styles.searchBox}>
                 <input 
+                    ref={inputRef}
                     className={styles.search} 
                     type="search" 
                     placeholder="검색어를 입력하세요." />
@@ -29,7 +33,6 @@ export default function Product_search({toggleMenu}) {
             </div>
         </div>
     );
-    
-}
+};
 
-// className={styles.}
+export default Header_search;
