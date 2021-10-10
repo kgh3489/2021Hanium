@@ -1,6 +1,7 @@
 .search {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     margin: 0 auto;
     height: 100vh;
@@ -13,22 +14,14 @@
     align-items: center;
     width: 100%;
     height: 3.2rem;
-    background: snow;
     border-bottom: 1px solid lightgray;
-    margin: 0;
-    padding: 0;
     position: sticky;
-    top: 0;
 }
 
 .back {
-    justify-content: flex-start;
     color: skyblue;
-    font-size: 1.5rem;
     margin: 0.5rem;
     font-size: 24px;
-    left: 0;
-    top: 0;
 }
 
 .inputBox {
@@ -37,7 +30,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 2.4rem;
+    height: 2.2rem;
     background-color: rgb(230, 230, 230);
     border-radius: 6px;
     margin-right: 16px;
@@ -49,8 +42,9 @@
     background-color: transparent;
     border: none;
     width: 85%;
-    margin-right: 15px;
-    height: 2.4rem;
+    margin-right: 24px;
+    margin-left: 12px;
+    height: 2.2rem;
 }
 
 
@@ -58,3 +52,27 @@
     outline: none;
 }
 
+
+
+/* search input x버튼삭제 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display: none;
+}
+
+.cancel {
+    cursor: pointer;
+    color:lightslategray;
+    margin: 0;
+    font-size: 18px;
+}
+
+
+.message {
+    width: 70%;
+    text-align: center;
+    color: rgb(31, 31, 31);
+    margin-top: 2rem;
+}

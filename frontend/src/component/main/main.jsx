@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import ProductList from '../product_list/product_list';
@@ -11,6 +12,13 @@ const Main = (props) => {
 
     //상품 리스트 객체 배열
     const[products, setProducts] = useState([]);
+
+    const history = useHistory();
+    const goToProductRegister = () => {
+        history.push({
+            pathname: "/product_register"
+        })
+    }
 
 
 
@@ -40,6 +48,11 @@ const Main = (props) => {
             <Header />
             <ProductList products={products}/>
             <Footer />
+
+            {/* 상품등록페이지로 이동 버튼 */}
+            <button onClick={goToProductRegister} className={styles.float}>
+                <i className="fas fa-plus"></i>
+            </button>
         </div>
     );
 
