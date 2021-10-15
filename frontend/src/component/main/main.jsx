@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router';
 import Footer from '../footer/footer';
 import Header from '../header/header';
@@ -46,6 +46,7 @@ const Main = (props) => {
     return (
         <div className={styles.main}>
             <Header />
+
             <ProductList products={products}/>
             <Footer />
 

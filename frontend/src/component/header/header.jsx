@@ -33,7 +33,7 @@ const Header = (props) => {
                 </button>
             </div>
             <div className={styles.title}>
-                <h1 className={styles.title_h1}>Lend</h1>
+                <span className={styles.title_h1}>Lend</span>
             </div>
             <div className={styles.header_right}>
                 <button onClick={goToSearch} className={`${styles.btn} ${styles.searchBtn}`}><i className="fas fa-search"></i></button>
