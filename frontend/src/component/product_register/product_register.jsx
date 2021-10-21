@@ -90,7 +90,7 @@ function ProductRegister() {
         fd.append("product_lend_d", productData.product_lend_d);
         fd.append("product_detail", productData.product_detail);
         fd.append("product_location", productData.product_location);
-        console.log(productData);
+        // console.log(productData);
 
         axios({
             method: 'post',

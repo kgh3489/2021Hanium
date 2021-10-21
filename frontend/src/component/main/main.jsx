@@ -39,9 +39,27 @@ const Main = (props) => {
         //     return;
         // }
         loadProducts()
-
     },[]);
 
+    //필터 기능
+    const filterRef = useRef();
+
+    const filterHandler = () => {
+        filterRef.current.style.display = 'block'
+    }
+
+    const filterMTV = () => {
+        
+        filterRef.current.style.display = 'none'
+    }
+    const filterHybrid = () => {
+
+        filterRef.current.style.display = 'none'
+    }
+    const filterRoad = () => {
+
+        filterRef.current.style.display = 'none'
+    }
 
 
     
@@ -49,7 +67,14 @@ const Main = (props) => {
     return (
         <div className={styles.main}>
             <Header />
-
+            <button onClick={filterHandler} className={styles.filterBtn}><i className="fas fa-filter"></i></button>
+            <div ref={filterRef} className={styles.filterBox}>
+                <div className={styles.bikeBox}>
+                    <button onClick={filterMTV} className={styles.bikeBtn}>MTV</button>
+                    <button onClick={filterHybrid} className={styles.bikeBtn}>하이브리드</button>
+                    <button onClick={filterRoad} className={styles.bikeBtn}>로드바이크</button>
+                </div>
+            </div>
             <ProductList products={products}/>
             <Footer />
 
