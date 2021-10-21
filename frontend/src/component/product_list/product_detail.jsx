@@ -42,11 +42,15 @@ const ProductDetail = (props) => {
                     />
                 </div>
                 <header className={styles.userBox}>
-                    <span>등록자정보</span>
+                    <span>등록자정보 &nbsp;</span>
+                    <span>닉넴 : {product.member}</span>
                 </header>
                 <section className={styles.ProductInfo}>
                     <div className={styles.product_title}>
                         <span>{product.product_name}</span>
+                    </div>
+                    <div className={styles.location}>
+                        <span>{product.gu}</span>
                     </div>
                     <div className={styles.product_description}>
                         <span>{product.product_description}</span>

@@ -50,6 +50,11 @@
     font-weight: 600;
 }
 
+
+.location {
+    color: gray;
+}
+
 .product_description {
     width: 100%;
     margin: 1rem 0;
@@ -70,8 +75,8 @@
     background-color: skyblue;
     margin-right: 12px;
     color: snow;
+    cursor: pointer;
 }
-
 
 
 

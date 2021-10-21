@@ -40,6 +40,9 @@ const KakaoAPI = (props) => {
                         // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
+                        
+                        //주소 입력하는 input에 클릭한 위치 정보 표시
+                        document.getElementById('addressInput').value = `${result[0].address.address_name}`
 
                         props.getTextValue(result[0].address.address_name);
                         // props.handleChange(result[0].address.address_name);

@@ -55,14 +55,10 @@ function ProductRegister() {
         e.preventDefault();
         inputImgRef.current.click();
     }
-    // 주소 받아오기
-    const [textValue, setTextValue] = useState();
-
     const getTextValue = (text) => {
-        setTextValue(text);
         setProductData({
             ...productData,
-            ["product_location"]: text,
+            "product_location": text,
         })
     }
     // 상품

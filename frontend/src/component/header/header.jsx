@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import styles from './header.module.css';
 import HeaderPop from './header_pop/header_pop';
-import HeaderSearch from './header_search/header_search';
 
 const Header = (props) => {
     
