@@ -14,7 +14,11 @@ UserModel = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
 <<<<<<< HEAD
+<<<<<<< HEAD
     # product_model = ProductSerializer(many=True, read_only=True)
+=======
+    #product_model = ProductSerializer(many=True, read_only=True)
+>>>>>>> kgh0929
 =======
     #product_model = ProductSerializer(many=True, read_only=True)
 >>>>>>> kgh0929
