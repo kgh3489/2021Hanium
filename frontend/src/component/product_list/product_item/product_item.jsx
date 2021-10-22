@@ -18,22 +18,20 @@ const Product = ({product}) => {
 
     return (
         <div className={styles.product_item}>
-            <div className={styles.container} onClick={click}>
-                <div className={styles.imagesec}>
-                    <img className={styles.bycle_img} src={product.img_url} alt="" />
+            <div className={styles.imagesec}>
+                <img className={styles.bycle_img} src={product.product_img} alt="" />
+            </div>
+            <div className={styles.descsec}>
+                <div className={styles.product_title}>
+                    <span>{product.product_name}</span>
                 </div>
-                <div className={styles.descsec}>
-                    <div className={styles.product_title}>
-                        <span>{product.product_name}</span>
-                    </div>
-                    <div className={styles.product_desc}>
-                        <span>{product.product_description}</span>
-                    </div>
-                    <div className={styles.product_price}>
-                        <span className={styles.product_seller}>판매자 : {product.member} </span>
-                        <span>가격: {product.rent_day}일 / </span>
-                        <span>{product.price_rent_day}원</span>
-                    </div>
+                <div className={styles.product_desc}>
+                    <span>{product.product_detail}</span>
+                </div>
+                {/* <span className={styles.product_seller}>판매자 : {product.member} </span> */}
+                <div className={styles.product_price}>
+                    <span>가격: 시간당 {product.product_lend_h}원 / </span>
+                    <span>일당 {product.product_lend_d}원</span>
                 </div>
             </div>
         </div>

@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import ProductList from '../product_list/product_list';
 import styles from './main.module.css';
+import axios from 'axios';
+
 
 const Main = (props) => {
     
     // 유저정보 (로그인 기능 구현 시 작성)
     // const[userInfo, setUserInfo] = useState(historyState && historyState.userInfo);
 
-    //상품 리스트 객체 배열
-    const[products, setProducts] = useState([]);
+    
 
     const history = useHistory();
     const goToProductRegister = () => {
@@ -23,11 +24,13 @@ const Main = (props) => {
 
 
 
-
+    //상품 리스트 객체 배열
+    const[products, setProducts] = useState([]);
     //상품들 가져오기(상품등록 DB구현 시 경로 재작성)
     const loadProducts=() => {
-        return fetch(process.env.PUBLIC_URL + "/static/data_sample.json")
-        .then(res => res.json())
+        axios.get('/product/')
+            .then((Response) => setProducts(Response.data))
+            .catch((Error) => {console.log(Error)})
     }
 
     //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴
@@ -36,9 +39,8 @@ const Main = (props) => {
         //     return;
         // }
         loadProducts()
-        .then(prod => setProducts(prod["products"]))
-
     },[]);
+
 
 
     
@@ -46,6 +48,7 @@ const Main = (props) => {
     return (
         <div className={styles.main}>
             <Header />
+
             <ProductList products={products}/>
             <Footer />
 

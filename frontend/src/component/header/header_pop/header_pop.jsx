@@ -50,7 +50,7 @@ const HeaderPop = ({toggleMenu}) => {
                             <button className={styles.profilemenuImg}><i className="fas fa-archive"></i></button>
                         </div>
                         <div className={styles.profilemenu_right}>
-                            <span className={styles.myProduct}>내 등록 상품</span>                        
+                            <span className={styles.myProduct}>내 상품</span>                        
                         </div>
                     </div>
                     <div className={styles.pop_profilemenu}>

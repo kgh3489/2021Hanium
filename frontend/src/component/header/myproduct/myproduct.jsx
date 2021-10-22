@@ -17,6 +17,7 @@ const MyProdcut = () => {
         })
     }
 
+    // 해당 회원 토큰마다 상품 지정해서 get 해와야함
     const[products, setProducts] = useState([]);
     
     const loadProducts=() => {
@@ -33,9 +34,11 @@ const MyProdcut = () => {
     
     return (
         <div className={styles.container}>
+            {/* 상단바 */}
             <div className={styles.header}>
                 <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
             </div>
+            {/* 사용중인 자전거 */}
             <div className={styles.bikeUse}>
                 <div className={styles.bikeTitle}><span>사용중인 자전거</span></div>
                 <div className={styles.products}>
@@ -57,6 +60,7 @@ const MyProdcut = () => {
                     }
                 </div>
             </div>
+            {/* 등록한 자전거 */}
             <div className={styles.bikeRent}>
                 <div className={styles.bikeTitle}><span>등록한 자전거</span></div>
                 <div className={styles.products}>
