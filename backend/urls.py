@@ -18,10 +18,14 @@ from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
     path('', include('user.urls')),
     path('', include('product.urls')),
+    path('api/token/', obtain_jwt_token), #JWT 토큰을 발행
+    path('api/token/verify/', verify_jwt_token), #JWT 토큰이 유효한지 검증
+    path('api/token/refresh/', refresh_jwt_token), #JWT 토큰을 갱신
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

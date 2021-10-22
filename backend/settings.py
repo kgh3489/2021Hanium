@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os, datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'user',
     'product',
     'rest_framework',
+    'rest_framework_jwt',
+    'rest_framework.authtoken',
     'corsheaders',
 ]
 
@@ -68,6 +70,29 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 #CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  #인증된 회원만 액세스 허용
+        'rest_framework.permissions.AllowAny',         #모든 회원 액세스 허용
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': ( #api가 실행됬을 때 인증할 클래스를 정의
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication', #장고 기본 인증방식을 JWT 토큰 인증으로 변경
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+
+JWT_AUTH = {
+   'JWT_SECRET_KEY': SECRET_KEY,  # JWT 에 서명하는데 사용되는 시크릿키. 장고의 시크릿 키가 디폴트.
+   'JWT_ALGORITHM': 'HS256', # 암호화 알고리즘
+   #'JWT_VERIFY_EXPIRATION' : True, #토큰 검증
+   'JWT_ALLOW_REFRESH': True, #유효기간이 지나면 새로운 토큰 반환의 refresh
+   'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),  # Access Token의 만료 시간
+   'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=3), # Refresh Token의 만료 시간
+   #'JWT_RESPONSE_PAYLOAD_HANDLER': 'rest_framework_jwt.utils.jwt_response_payload_handler',
+}
+
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -155,3 +180,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user.UserModel'
