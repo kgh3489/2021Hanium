@@ -13,15 +13,6 @@ JWT_ENCODE_HANDLER = api_settings.JWT_ENCODE_HANDLER
 UserModel = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
-<<<<<<< HEAD
-<<<<<<< HEAD
-    # product_model = ProductSerializer(many=True, read_only=True)
-=======
-    #product_model = ProductSerializer(many=True, read_only=True)
->>>>>>> kgh0929
-=======
-    #product_model = ProductSerializer(many=True, read_only=True)
->>>>>>> kgh0929
     class Meta:
         model = UserModel
         fields = ('username','password','nickname','phone') # 필드 설정

@@ -88,7 +88,7 @@ JWT_AUTH = {
    'JWT_ALGORITHM': 'HS256', # 암호화 알고리즘
    #'JWT_VERIFY_EXPIRATION' : True, #토큰 검증
    'JWT_ALLOW_REFRESH': True, #유효기간이 지나면 새로운 토큰 반환의 refresh
-   'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),  # Access Token의 만료 시간
+   'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=1),  # Access Token의 만료 시간
    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=3), # Refresh Token의 만료 시간
    #'JWT_RESPONSE_PAYLOAD_HANDLER': 'rest_framework_jwt.utils.jwt_response_payload_handler',
 }
