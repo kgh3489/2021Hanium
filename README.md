@@ -33,9 +33,11 @@
 - Pillow 설치 : python -m pip install Pillow
 - djangorestframework-jwt 설치 : pip install djangorestframework-jwt
 
-## APP추가 후, 마이그레이션
-py manage.py makemigrations
-py manage.py migrate
+## 백엔드 변경사항 발생 시
+#### [선행작업]migrations 폴더에서 숫자로 시작하는 파일 삭제{ ex)0001_initial.py }, db.sqlite3 삭제 
+- py manage.py makemigrations
+- py manage.py migrate
+- py manage.py createsuperuser
 
 ## 프로그램 실행
 
