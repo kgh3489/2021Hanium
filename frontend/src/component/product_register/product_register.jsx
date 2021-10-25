@@ -51,9 +51,11 @@ function ProductRegister() {
     // 이미지 인풋과 사진 추가 버튼 연결
     const inputImgRef = useRef();
 
+    const picRef = useRef();
     const btnChange = (e) => {
         e.preventDefault();
         inputImgRef.current.click();
+        picRef.current.style.display = 'none'
     }
     const getTextValue = (text) => {
         setProductData({
@@ -111,6 +113,8 @@ function ProductRegister() {
         })
     }
 
+    
+
 
 
     return (
@@ -132,7 +136,7 @@ function ProductRegister() {
                 <div className={styles.product_photo}>
                     <input ref={inputImgRef}  style={{display: "none"}} onChange={handleChangeFile}
                     type="file" className="imgInput" name="product_img" accept="image/*" multiple="multiple"/>
-                    <button onClick={btnChange} className={styles.photo_inputBtn}>사진 추가</button>
+                    <button ref={picRef} onClick={btnChange} className={styles.photo_inputBtn}>사진 추가</button>
                 </div>
                 {imgBase64.map((item) => {
                         return(
