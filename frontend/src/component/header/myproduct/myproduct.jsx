@@ -34,13 +34,11 @@ const MyProdcut = () => {
     
     return (
         <div className={styles.container}>
-            {/* 상단바 */}
-            <div className={styles.header}>
-                <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
-            </div>
             {/* 사용중인 자전거 */}
             <div className={styles.bikeUse}>
-                <div className={styles.bikeTitle}><span>사용중인 자전거</span></div>
+                <div className={styles.bikeTitle}>
+                    <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
+                    <span>사용중인 자전거</span></div>
                 <div className={styles.products}>
                     {
                         products.filter(product=> {

@@ -93,34 +93,37 @@ const Login = (props) => {
             <div className={styles.header}>
                 <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
             </div>
-            <div className={styles.banner}>
-                <img className={styles.logo} src={process.env.PUBLIC_URL + "/static/logo.png"} alt="logo" />
-            </div>
-            <div className={styles.form}>
-                <div className={styles.form_group}>
-                    <label htmlFor="username">아이디</label>
-                    <input type="text" name="username" placeholder="아이디를 입력해주세요" value={loginData.username || ""} onChange={handleChange}/>
+            <div className={styles.mainContent}>
+                <div className={styles.banner}>
+                    <img className={styles.logo} src={process.env.PUBLIC_URL + "/static/logo.png"} alt="logo" />
                 </div>
-                <div className={styles.form_group}>
-                    <label htmlFor="password">비밀번호</label>
-                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" value={loginData.password || ""} onChange={handleChange}/>
+                <div className={styles.form}>
+                    <div className={styles.form_group}>
+                        <label htmlFor="username">아이디</label>
+                        <input type="text" name="username" placeholder="아이디를 입력해주세요" value={loginData.username || ""} onChange={handleChange}/>
+                    </div>
+                    <div className={styles.form_group}>
+                        <label htmlFor="password">비밀번호</label>
+                        <input type="password" name="password" placeholder="비밀번호를 입력해주세요" value={loginData.password || ""} onChange={handleChange}/>
+                    </div>
+                </div>
+                <div className={styles.btns}>
+                    <button className={styles.login_btn} onClick={handleLogin}>로그인</button>
+                    <button className={styles.register_btn} onClick={goToSignUp}>회원가입</button>
+                </div>
+                <div className={styles.loginSeperate}>
+                    <hr />
+                </div>
+                <div className={styles.login_sns}>
+                    <div id="naverIdLogin" className={styles.login_sns}></div>  
+                    <a href={KakaoAuth}>
+                        <button className={styles.login_sns}>
+                            <img src="/static/kakao_login.png" alt="kakao_login" />
+                        </button>
+                    </a>
                 </div>
             </div>
-            <div className={styles.btns}>
-                <button className={styles.login_btn} onClick={handleLogin}>로그인</button>
-                <button className={styles.register_btn} onClick={goToSignUp}>회원가입</button>
-            </div>
-            <div className={styles.loginSeperate}>
-                <hr />
-            </div>
-            <div className={styles.login_sns}>
-                <div id="naverIdLogin" className={styles.login_sns}></div>  
-                <a href={KakaoAuth}>
-                    <button className={styles.login_sns}>
-                        <img src="/static/kakao_login.png" alt="kakao_login" />
-                    </button>
-                </a>
-            </div>
+            
         </div>
     )
 };

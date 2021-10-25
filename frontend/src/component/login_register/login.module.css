@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   text-align: center;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 /* 헤더 */
@@ -33,6 +33,21 @@
 .logo {
   width: 11em;
 }
+
+.mainContent {
+  overflow-y: scroll;
+}
+
+/* 스크롤바 디자인 */
+.mainContent::-webkit-scrollbar {
+    width: 0.15em;
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 1em;
+}
+
 
 /* 로그인 인풋 박스 */
 .form {
