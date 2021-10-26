@@ -1,3 +1,4 @@
+from django.db.models import fields
 from .models import ProductModel
 from rest_framework import serializers
 
@@ -9,6 +10,7 @@ class ProductSerializer(serializers.ModelSerializer):
         model = ProductModel
         fields = (
             #'author',
+            'id',
             'product_img',
             'product_name',
             'product_type',
