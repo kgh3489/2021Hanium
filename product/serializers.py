@@ -1,3 +1,4 @@
+from django.db.models import fields
 from .models import ProductModel
 from rest_framework import serializers
 
@@ -18,6 +19,3 @@ class ProductSerializer(serializers.ModelSerializer):
             'product_location',
             'product_detail'
             ) # 필드 설정
-
-    # class PostSerializer(serializers.ModelSerializer):
-    #     model = ProductModel
