@@ -9,6 +9,7 @@
 .container {
   display: flex;
   cursor: pointer;
+  width: 100%;
 }
 /* 좌측 이미지 영역 */
 .imagesec {
