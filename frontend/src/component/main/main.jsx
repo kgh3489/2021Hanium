@@ -29,8 +29,8 @@ const Main = (props) => {
     //상품들 가져오기(상품등록 DB구현 시 경로 재작성)
     const loadProducts=() => {
         axios.get('/product/')
-            .then((Response) => setProducts(Response.data))
-            .catch((Error) => {console.log(Error)})
+            .then((response) => setProducts(response.data))
+            .catch((error) => {console.log(error)})
     }
 
     //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴

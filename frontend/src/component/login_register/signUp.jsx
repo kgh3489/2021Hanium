@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './signUp.module.css';
 import axios from 'axios';
@@ -14,6 +14,8 @@ const SignUp = (props) => {
         "nickname": '',
         "phone": '',
     });
+
+    const usernameRef = useRef();
 
     const goBack = () => {
         history.goBack({
@@ -41,7 +43,7 @@ const SignUp = (props) => {
             }
             axios({
                 method: 'post',
-                url: '/user/',
+                url: '/user/signup',
                 data: JSON.stringify({
                     username: signUpdata.username,
                     password: signUpdata.password,
@@ -51,11 +53,14 @@ const SignUp = (props) => {
                 headers: {
                     "Content-Type": "application/json",
                 }
-            })
-
-
-            alert(`id: ${signUpdata.username}으로 회원가입 되었습니다.`)
-            goBack();
+            }).then(res => {
+                alert(`${res.data.username}으로 회원가입 되었습니다.`);
+                goBack();
+            }).catch(error => {
+                alert(`${signUpdata.username}은 이미 존재하는 id입니다.`);
+                usernameRef.current.focus();
+                console.log(error);
+            });
         }
     }
 
@@ -77,7 +82,7 @@ const SignUp = (props) => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <CSRFToken />
                 <label className={styles.label}>아이디
-                    <input className={styles.input} type="text" name="username" placeholder='아이디' value={signUpdata.username || ""} onChange={handleChange}></input>
+                    <input ref={usernameRef} className={styles.input} type="text" name="username" placeholder='아이디' value={signUpdata.username || ""} onChange={handleChange}></input>
                 </label>
 
 
