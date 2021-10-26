@@ -39,7 +39,7 @@ class LoginSerializer(serializers.Serializer):
     def validate(self, data):
         username = data.get("username")
         password = data.get("password", None)
-        # 사용자 아이디와 비밀번호로 로그인 구현(<-> 사용자 아이디 대신 이메일로도 가능)
+        # 사용자 아이디와 비밀번호로 로그인 구현
         user = authenticate(username=username, password=password)
 
         if user is None:

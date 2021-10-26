@@ -9,6 +9,7 @@ class ProductSerializer(serializers.ModelSerializer):
         model = ProductModel
         fields = (
             #'author',
+            'id',
             'product_img',
             'product_name',
             'product_type',
@@ -17,3 +18,6 @@ class ProductSerializer(serializers.ModelSerializer):
             'product_location',
             'product_detail'
             ) # 필드 설정
+
+    # class PostSerializer(serializers.ModelSerializer):
+    #     model = ProductModel

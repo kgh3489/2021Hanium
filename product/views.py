@@ -1,24 +1,18 @@
 # from django.shortcuts import render
-# from django.http import HttpResponse
 
-# # Create your views here.
-# def prouduct_register_view(request):
-#     if request.method == 'GET':
-#         return HttpResponse('!')
-    
-#     #elif request.method =='POST':
-#     if request.method == 'POSt':
-#         return HttpResponse('!!!')
 from django.core import serializers
 from rest_framework import status
 from rest_framework.views import APIView 
-from rest_framework.response import Response 
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.decorators import permission_classes, api_view
 from django.http.response import HttpResponse 
 from .models import ProductModel 
 from .serializers import ProductSerializer 
 
 
 class product_register_view(APIView):
+    #permission_classes = [AllowAny]
     def get(self, request, format=None):
         products = ProductModel.objects.all()
         serializer = ProductSerializer(products, many=True)
