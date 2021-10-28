@@ -63,7 +63,7 @@ const Login = (props) => {
         }
         axios({
             method: 'post',
-            url: '/userlogin/',
+            url: '/user/login/',
             data: JSON.stringify({
                 username: loginData.username,
                 password: loginData.password,

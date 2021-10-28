@@ -43,7 +43,7 @@ const SignUp = (props) => {
             }
             axios({
                 method: 'post',
-                url: '/user/signup',
+                url: '/user/signup/',
                 data: JSON.stringify({
                     username: signUpdata.username,
                     password: signUpdata.password,
