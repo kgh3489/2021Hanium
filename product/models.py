@@ -4,7 +4,7 @@ from django.db import models
 class ProductModel (models.Model):
     class Meta:
         ordering = ["-created_at"]
-    #author = models.ForeignKey(UserModel, on_delete=models.CASCADE, related_name="product_model") #UserModel에서 참조
+    author = models.ForeignKey(UserModel, null=True, blank=True, on_delete=models.CASCADE) #UserModel에서 참조
     product_img = models.ImageField(blank=True, upload_to="uploads")
     product_name = models.CharField(max_length=128, null=False)
     product_type = models.CharField(max_length=128, null=False)

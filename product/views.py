@@ -28,6 +28,10 @@ class Product_Register_View(APIView): #상품 등록 API
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_404_BAD_REQUEST)
 
+    #모델을 생성할 때 해당 함수를 호출한 후 현재 user 정보를 전달
+    def perform_create(self, serializer):
+        serializer.save(user = self.request.user)
+
 
 class Product_Detail_View(APIView): #등록된 상품 상세 정보 API(CRUD)
     permission_classes = [AllowAny]
