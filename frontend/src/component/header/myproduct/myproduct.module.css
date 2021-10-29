@@ -22,10 +22,8 @@
 .gotoHome {
     color: snow;
     font-size: 1.5rem;
-    position: absolute;
-    top: 5px;
-    left: 592px;
     cursor: pointer;
+    margin-left: 0.4rem;
 }
 
 /* 사용중 자전거 */
@@ -54,12 +52,28 @@
 .bikeTitle {
     height: 35px;
     width: 100%;
-    text-align: center;
     background-color: skyblue;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly
+}
+
+.bikeTitleTop {
+    height: 35px;
+    width: 100%;
+    background-color: skyblue;
+    display: flex;
+    align-items:center;
 }
 
 .bikeTitle span {
     font-size: 24px;
     color: snow;
-    text-align: center;
+    
 }
+.bikeTitleTop span {
+    font-size: 24px;
+    color: snow;
+    margin-left: 60px;
+}
+

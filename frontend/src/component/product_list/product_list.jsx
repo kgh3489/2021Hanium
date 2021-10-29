@@ -3,7 +3,7 @@ import styles from './product_list.module.css';
 import Product from './product_item/product_item';
 import axios from 'axios';
 
-const ProductList = ({products}) => {
+const ProductList = ({products, filteredData, setFilteredData}) => {
 
     
 
@@ -15,18 +15,29 @@ const ProductList = ({products}) => {
     }
 
     const filterMTV = () => {
-        
-        filterRef.current.style.display = 'none'
+        let filteredM = products.filter((type) => {
+            return type.product_type === 'MTV';
+            });
+            console.log(filteredM);
+            setFilteredData(filteredM);
+        filterRef.current.style.display = 'none';
     }
     const filterHybrid = () => {
-
-        filterRef.current.style.display = 'none'
+        let filteredH = products.filter((type) => {
+            return type.product_type === '하이브리드';
+            });
+            console.log(filteredH);
+            setFilteredData(filteredH);
+        filterRef.current.style.display = 'none';
     }
     const filterRoad = () => {
-
-        filterRef.current.style.display = 'none'
+        let filteredR = products.filter((type) => {
+            return type.product_type === '로드';
+            });
+            console.log(filteredR);
+            setFilteredData(filteredR);
+        filterRef.current.style.display = 'none';
     }
-
 
     return (
         <section className={styles.product_list}>
@@ -38,9 +49,9 @@ const ProductList = ({products}) => {
                     <button onClick={filterRoad} className={styles.bikeBtn}>로드바이크</button>
                 </div>
             </div>
-            {/* <button className={styles.btn_regiprod}>버튼</button> */}
+            
             {
-                products.map(product => 
+                filteredData.map(product => 
                     <Product 
                         key={product.id}
                         product={product}

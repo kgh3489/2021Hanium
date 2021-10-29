@@ -36,7 +36,7 @@ const MyProdcut = () => {
         <div className={styles.container}>
             {/* 사용중인 자전거 */}
             <div className={styles.bikeUse}>
-                <div className={styles.bikeTitle}>
+                <div className={styles.bikeTitleTop}>
                     <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
                     <span>사용중인 자전거</span></div>
                 <div className={styles.products}>
