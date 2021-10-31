@@ -5,14 +5,13 @@ import Header from '../header/header';
 import ProductList from '../product_list/product_list';
 import styles from './main.module.css';
 import axios from 'axios';
+import { getCurrentUser } from '../../service/getCurrentUser';
 
 
 const Main = (props) => {
     
     // 유저정보 (로그인 기능 구현 시 작성)
     // const[userInfo, setUserInfo] = useState(historyState && historyState.userInfo);
-
-    
 
     const history = useHistory();
     const goToProductRegister = () => {
@@ -21,6 +20,8 @@ const Main = (props) => {
         })
     }
 
+    //로그인 상태
+    const[logined, setLogined] = useState(false);
 
 
 
@@ -28,20 +29,11 @@ const Main = (props) => {
     const[products, setProducts] = useState([]);
     const [filteredData,setFilteredData] = useState(products);
 
-    //상품들 가져오기(상품등록 DB구현 시 경로 재작성)
-    const loadProducts=() => {
-        axios.get('/product/')
-        .then(response => {
-        //console.log(response.data)
-        setProducts(response.data);
-        setFilteredData(response.data);
-        })
-        .catch(error => {
-        console.log('에러: ' + error);
-        })
+    //전체 상품 리스트 가져오기
+    const loadProducts = async () => {
+        const res = await fetch('/product/');
+        return await res.json();
     }
-
-    
 
     //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴
     useEffect(() => {
@@ -49,11 +41,25 @@ const Main = (props) => {
         //     return;
         // }
         loadProducts()
+        .then(prod => setProducts(prod))
     },[]);
+
+    //로그인 상태 
+    useEffect(() => {
+        getCurrentUser()
+        .then(res => {
+            setLogined(true)
+            console.log(res)
+            localStorage.setItem('lend_user_nickname',res.data.nickname)
+        })
+        .catch(error => setLogined(false))
+    },[])
+
+
     
     return (
         <div className={styles.main}>
-            <Header />
+            <Header logined={logined}/>
 
             <ProductList 
             setFilteredData={setFilteredData} 
