@@ -92,7 +92,7 @@ const Search = (props) => {
             <div className={styles.message} ref={messageRef}>
                 <h2>검색어를 입력해주세용.</h2>
             </div>
-            {searchProducts &&<ProductList products={searchProducts} />}
+            {searchProducts &&<ProductList filteredData={searchProducts} />}
         </div>
     )
 
