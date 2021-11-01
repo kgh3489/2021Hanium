@@ -30,9 +30,9 @@ const Main = (props) => {
     const [filteredData,setFilteredData] = useState(products);
 
     //전체 상품 리스트 가져오기
-    const loadProducts = async () => {
-        const res = await fetch('/product/');
-        return await res.json();
+    const loadProducts =  () => {
+        return fetch('/product/')
+        .then(res => res.json())
     }
 
     //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴

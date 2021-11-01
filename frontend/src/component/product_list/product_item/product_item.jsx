@@ -6,7 +6,7 @@ const Product = ({product}) => {
         
     const history = useHistory();
 
-    const click = () => {
+    const onProductClick = () => {
         history.push({
             pathname: `product/${product.id}`,
             props: product.id
@@ -18,7 +18,7 @@ const Product = ({product}) => {
 
     return (
         <div className={styles.product_item}>
-            <div className={styles.container} onClick={click}>
+            <div className={styles.container} onClick={onProductClick}>
                 <div className={styles.imagesec}>
                     <img className={styles.bycle_img} src={product.product_img} alt="" />
                 </div>

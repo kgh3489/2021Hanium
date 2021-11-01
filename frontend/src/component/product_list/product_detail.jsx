@@ -13,6 +13,14 @@ const ProductDetail = (props) => {
 
     const[product,setProduct] = useState({});
 
+    const[comment,setComment] = useState('');
+
+
+    const handleChange = (e) => {
+        setComment(e.target.value)
+    }
+
+
     useEffect(() => {
 
         const productId = parseInt(window.location.pathname.substr(window.location.pathname.lastIndexOf('/')+1));
@@ -32,7 +40,7 @@ const ProductDetail = (props) => {
 
     return (
         <div className={styles.container}>
-            <section className={styles.details}>
+                {/* 이미지 박스 */}
                 <div className={styles.imgBox}>
                 <button onClick={goBack} className={styles.goBackBtn}><i className="fas fa-arrow-left"></i></button>
                     <img 
@@ -41,11 +49,14 @@ const ProductDetail = (props) => {
                         alt="" 
                     />
                 </div>
+                <div className={styles.product_info}>
+                {/* 등록자 정보 */}
                 <header className={styles.userBox}>
                     <span>등록자정보 &nbsp;</span>
                     <span>닉넴 : {product.member}</span>
                 </header>
-                <section className={styles.ProductInfo}>
+                {/* 상품 정보 */}
+                <section className={styles.product_detail}>
                     <div className={styles.product_title}>
                         <span>{product.product_name}</span>
                     </div>
@@ -56,10 +67,42 @@ const ProductDetail = (props) => {
                         <span>{product.product_description}</span>
                     </div>
                 </section>
-                <div className={styles.chatBox}>
-                    <button className={styles.chatBtn}>채팅으로 시작</button>
+                {/* 댓글 */}
+                <div className={styles.commentBox}>
+                    <form className={styles.commentForm}>
+                        <textarea className={styles.commentInput} name="comment" type="text" placeholder="aaaaa" 
+                        value={comment} onChange={handleChange}/>
+                        <button className={styles.commentSubmit}>등록</button>
+                    </form>
+
+                    <div className={styles.comment}>
+                        sadasd
+                    </div>
+                    
+                    <div className={styles.comment}>
+                        sadasd
+                    </div>
+                    
+                    <div className={styles.comment}>
+                        sadasd
+                    </div>
+                    
+                    <div className={styles.comment}>
+                        sadasd
+                    </div>
+                    
+                    <div className={styles.comment}>
+                        sadasd
+                    </div>
+                    
+                    <div className={styles.comment}>
+                        sadasd
+                    </div>
+                    
+
                 </div>
-            </section>
+
+                </div>
         </div>
 
     );
