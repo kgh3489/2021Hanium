@@ -2,12 +2,16 @@ import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import ProductList from '../product_list/product_list';
 import styles from './search.module.css';
+import axios from 'axios';
 
 
 const Search = (props) => {
     const history = useHistory();
     const goBack = () => {
-        history.goBack();
+        // history.goBack();
+        history.push({
+            pathname: "/"
+        })
     }
     // 검색어텍스트
     const[inputText,setInputText] = useState('');
@@ -30,6 +34,15 @@ const Search = (props) => {
     }
 
     const onSearch = (inputText) => {
+        // console.log(inputText);
+        axios.get('/product/' + '?search=' + inputRef.current.value) // /api/search?query=검색어 로 get요청 해줘야함.
+        .then((res) => {
+            // console.log(res.data);
+            setSearchProducts(res.data);
+        })
+        .catch(error => console.error(error))
+    }
+    /* const onSearch = (inputText) => {
         //console.log(inputText);
         fetch(process.env.PUBLIC_URL + "/static/data_sample.json") // /api/search?query=검색어 로 get요청 해줘야함.
         .then(res => res.json())
@@ -52,7 +65,7 @@ const Search = (props) => {
             return setSearchProducts(searchProd);
         })
         .catch(error => console.error(error))
-    }
+    } */
 
     const hideMessage = () => {
         messageRef.current.style="display:none;";
@@ -61,6 +74,11 @@ const Search = (props) => {
 
     const onSearchEnter = (e) => {
         if(e.key ==='Enter') {
+            // window.location.reload();
+            history.push({
+                pathname: '/search/',
+                search: '?search=' + inputRef.current.value,
+            });
             inputText && onSearch(inputText);
             searchProducts && hideMessage();
         }
