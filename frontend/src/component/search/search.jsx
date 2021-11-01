@@ -76,7 +76,6 @@ const Search = (props) => {
         if(e.key ==='Enter') {
             // window.location.reload();
             history.push({
-                pathname: '/search/',
                 search: '?search=' + inputRef.current.value,
             });
             inputText && onSearch(inputText);
