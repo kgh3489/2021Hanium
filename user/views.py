@@ -22,7 +22,7 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 #from rest_framework_jwt.serializers import VerifyJSONWebTokenSerialize
 
 @api_view(['GET'])
-@permission_classes ([AllowAny])
+@permission_classes ([IsAuthenticated])
 def getuser(request):
     if request.method == 'GET':
         users = UserModel.objects.all()

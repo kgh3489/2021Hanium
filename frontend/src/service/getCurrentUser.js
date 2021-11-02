@@ -8,7 +8,7 @@ export function getCurrentUser() {
         url: '/user/info',
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            "Authorization": `JWT ${localStorage.getItem('ACCESS_TOKEN')}`
         }
     })
 } 

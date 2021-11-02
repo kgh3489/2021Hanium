@@ -62,7 +62,7 @@ const Main = (props) => {
         .then(res => {
             setLogined(true)
             console.log(res)
-            localStorage.setItem('lend_user_nickname',res.data.nickname)
+            localStorage.setItem('lend_user_nickname',res.data[1].nickname)
         })
         .catch(error => setLogined(false))
     },[])
