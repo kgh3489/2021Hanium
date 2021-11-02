@@ -1,9 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import styles from './product_list.module.css';
 import Product from './product_item/product_item';
-import axios from 'axios';
 
-const ProductList = ({products, filteredData, setFilteredData}) => {
+const ProductList = ({products, filteredData, setFilteredData, searchProducts}) => {
 
     
 

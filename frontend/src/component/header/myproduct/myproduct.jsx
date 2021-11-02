@@ -38,7 +38,7 @@ const MyProdcut = () => {
             <div className={styles.bikeUse}>
                 <div className={styles.bikeTitleTop}>
                     <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
-                    <span>사용중인 자전거</span></div>
+                    <span>대여중인 자전거</span></div>
                 <div className={styles.products}>
                     {
                         products.filter(product=> {
@@ -60,7 +60,7 @@ const MyProdcut = () => {
             </div>
             {/* 등록한 자전거 */}
             <div className={styles.bikeRent}>
-                <div className={styles.bikeTitle}><span>등록한 자전거</span></div>
+                <div className={styles.bikeTitle}><span>등록중인 자전거</span></div>
                 <div className={styles.products}>
                     {
                         products.filter(product=> {
