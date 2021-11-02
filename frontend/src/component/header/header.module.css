@@ -24,6 +24,7 @@
 
 .title {
   margin-left: 1.2rem;
+  cursor: pointer;
 }
 
 .title_h1 {

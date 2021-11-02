@@ -29,10 +29,22 @@ const Main = (props) => {
     const[products, setProducts] = useState([]);
     const [filteredData,setFilteredData] = useState(products);
 
-    //전체 상품 리스트 가져오기
+    /* //전체 상품 리스트 가져오기
     const loadProducts =  () => {
         return fetch('/product/')
         .then(res => res.json())
+    }
+ */
+    const loadProducts=() => {
+        axios.get('/product/')
+        .then(response => {
+        //console.log(response.data)
+        setProducts(response.data);
+        setFilteredData(response.data);
+        })
+        .catch(error => {
+        console.log('에러: ' + error);
+        })
     }
     
 
@@ -42,7 +54,6 @@ const Main = (props) => {
         //     return;
         // }
         loadProducts()
-        .then(prod => setFilteredData(prod))
     },[]);
 
     //로그인 상태 

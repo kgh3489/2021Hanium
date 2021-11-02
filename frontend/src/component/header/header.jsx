@@ -12,6 +12,10 @@ const Header = ({logined}) => {
         })
     }
 
+    const refreshPage = () => {
+        window.location.reload();
+    }
+
     // 토글메뉴 
     const[isSideMenuOpen,setSideMenuOpen] = useState({menuOpen:false});
 
@@ -31,7 +35,7 @@ const Header = ({logined}) => {
                     <i className="fas fa-bars"></i>
                 </button>
             </div>
-            <div className={styles.title}>
+            <div onClick={refreshPage} className={styles.title}>
                 <span className={styles.title_h1}>Lend</span>
             </div>
             <div className={styles.header_right}>
