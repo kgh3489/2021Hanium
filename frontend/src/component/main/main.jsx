@@ -34,6 +34,7 @@ const Main = (props) => {
         return fetch('/product/')
         .then(res => res.json())
     }
+    
 
     //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴
     useEffect(() => {
@@ -41,7 +42,7 @@ const Main = (props) => {
         //     return;
         // }
         loadProducts()
-        .then(prod => setProducts(prod))
+        .then(prod => setFilteredData(prod))
     },[]);
 
     //로그인 상태 

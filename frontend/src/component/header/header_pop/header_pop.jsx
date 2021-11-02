@@ -36,41 +36,11 @@ const HeaderPop = ({toggleMenu, logined}) => {
                         <span className={styles.message}>서비스를 이용하시려면 로그인 해주세요.</span>
                         <span className={styles.move_login_page} onClick={goToLogin}>로그인 또는 회원가입 〉</span>
                     </div>
-<<<<<<< HEAD
                     )
                     }
                     {logined &&
                         <UserInfo/>
                     }
-=======
-
-                    {/* 로그인 되었을 시 나옴 */}
-                    <div className={styles.pop_profile}>
-                        <div className={styles.profile_left}>
-                            <button className={styles.profileImg}><i className="fas fa-user-circle"></i></button>
-                        </div>
-                        <div className={styles.profile_right}>
-                            <span className={styles.nickName}>닉네임</span>
-                            <button className={styles.move_profile_page}><span>내 프로필 수정 </span></button>
-                        </div>
-                    </div>
-                    <div onClick={goToMyProduct} className={styles.pop_profilemenu}>
-                        <div className={styles.profilemenu_left}>
-                            <button className={styles.profilemenuImg}><i className="fas fa-archive"></i></button>
-                        </div>
-                        <div className={styles.profilemenu_right}>
-                            <span className={styles.myProduct}>내 자전거</span>                        
-                        </div>
-                    </div>
-                    <div className={styles.pop_profilemenu}>
-                        <div className={styles.profilemenu_left}>
-                            <button className={styles.profilemenuImg}><i className="fas fa-comments"></i></button>
-                        </div>
-                        <div className={styles.profilemenu_right}>
-                            <span className={styles.myProduct}>채팅</span>                        
-                        </div>
-                    </div>
->>>>>>> j1029
             </div>  
         </div>
     )
