@@ -38,6 +38,32 @@ const ProductDetail = (props) => {
         //댓글 axios
     }
 
+    const handleDelete = (e) => {
+        axios({
+            method: 'delete',
+            url: `/product/${history.location.props}`,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            }
+        })
+        .then( res => {
+            console.log(res);
+            setProduct({
+                "product_id": res.data.id,
+                "product_name": res.data.product_name,
+                "product_location": res.data.product_location,
+                "product_detail": res.data.product_detail,
+                "product_img": res.data.product_img,
+                "product_lend_h": res.data.product_lend_h,
+                "product_lend_d": res.data.product_lend_d,
+                "product_type": res.data.product_type,
+                //"userId": res.data.userId,
+                //"postUserNickname": res.data.postUserNickname,
+            })
+        })
+    }
+
 
     useEffect(() => {
 
@@ -83,21 +109,29 @@ const ProductDetail = (props) => {
                 <div className={styles.product_info}>
                 {/* 등록자 정보 */}
                 <header className={styles.userBox}>
-                <div className={styles.profile_left}>
-                    <button className={styles.profileImg}><i className="fas fa-user-circle"></i></button>
-                </div>
-                <div className={styles.product_nickneme}>
-                    {/* 닉네임으로 바꿔줘야함 */}
-                    <span>상기몬</span>
-                </div>
+                    <div className={styles.profile_left}>
+                        <button className={styles.profileImg}><i className="fas fa-user-circle"></i></button>
+                    </div>
+                    <div className={styles.product_nickneme}>
+                        {/* 닉네임으로 바꿔줘야함 */}
+                        <span>상기몬</span>
+                        <div className={styles.location}>
+                            <span>{product.product_location}</span>
+                        </div>
+                    </div>
+                    {/* 내 상품일때만 상품등록저장 */}
+                    <div className={styles.btnBox}>
+                        <button className={styles.btnUpdate}>수정</button>
+                        <button className={styles.btnDelete}>삭제</button>
+                    </div>
                 </header>
                 {/* 상품 정보 */}
                 <section className={styles.product_detail}>
                     <div className={styles.product_title}>
                         <span>{product.product_name}</span>
                     </div>
-                    <div className={styles.location}>
-                        <span>{product.product_location}</span>
+                    <div className={styles.type}>
+                        <span>{product.product_type}</span>
                     </div>
                     <div className={styles.product_description}>
                         <span>{product.product_detail}</span>
