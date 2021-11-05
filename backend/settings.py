@@ -87,9 +87,10 @@ JWT_AUTH = {
    'JWT_SECRET_KEY': SECRET_KEY,  # JWT 에 서명하는데 사용되는 시크릿키. 장고의 시크릿 키가 디폴트.
    'JWT_ALGORITHM': 'HS256', # 암호화 알고리즘
    #'JWT_VERIFY_EXPIRATION' : True, #토큰 검증
-   'JWT_ALLOW_REFRESH': True, #유효기간이 지나면 새로운 토큰 반환의 refresh
-   'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=1),  # Access Token의 만료 시간
+   'JWT_ALLOW_REFRESH': False, #유효기간이 지나면 새로운 토큰 반환의 refresh
+   'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),  # Access Token의 만료 시간
    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=3), # Refresh Token의 만료 시간
+   'JWT_AUTH_HEADER_PREFIX': 'Bearer',
    #'JWT_RESPONSE_PAYLOAD_HANDLER': 'rest_framework_jwt.utils.jwt_response_payload_handler',
 }
 

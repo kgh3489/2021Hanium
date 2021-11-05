@@ -1,11 +1,6 @@
 # from django.shortcuts import render, redirect
-# from .models import UserModel
-# from rest_framework import status
 # from rest_framework import viewsets
-# from rest_framework.response import Response
 # from django.http import HttpResponse, JsonResponse
-# from django.core import serializers
-# from .serializers import UserSerializer
 
 from django.core import serializers
 from rest_framework import status
@@ -25,6 +20,7 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 @permission_classes ([IsAuthenticated])
 def getuser(request):
     if request.method == 'GET':
+        # users = request.user.is_authenticated
         users = UserModel.objects.all()
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
