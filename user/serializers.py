@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import update_last_login
 from django.contrib.auth import authenticate
 from .models import UserModel
-from product.serializers import ProductSerializer
 
 # JWT 사용을 위한 설정
 JWT_PAYLOAD_HANDLER = api_settings.JWT_PAYLOAD_HANDLER
