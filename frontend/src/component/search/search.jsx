@@ -35,7 +35,7 @@ const Search = (props) => {
 
     const onSearch = (inputText) => {
         // console.log(inputText);
-        axios.get('/product/' + '?search=' + inputRef.current.value) // /api/search?query=검색어 로 get요청 해줘야함.
+        axios.get('/search/' + '?search=' + inputRef.current.value) // /api/search?query=검색어 로 get요청 해줘야함.
         .then((res) => {
             // console.log(res.data);
             setSearchProducts(res.data);

@@ -157,7 +157,7 @@ function ProductRegister() {
                     <select name="product_type" className={styles.bikeStyle} value= {productData.product_type || ""} onChange={handleChange}>
                         <option>-- 자전거 종류 --</option>
                         <option>하이브리드</option>
-                        <option>MTV</option>
+                        <option>MTB</option>
                         <option>로드</option>
                     </select>
                     <div className={styles.priceDiv}>

@@ -50,7 +50,7 @@ class ProductViewSet(viewsets.ModelViewSet): #상품 등록 API
 
 
 class Product_Detail_View(APIView): #등록된 상품 상세 정보 API(CRUD)
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_object(self, pk):
         product = get_object_or_404(ProductModel, pk=pk)

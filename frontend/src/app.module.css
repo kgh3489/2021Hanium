@@ -13,3 +13,7 @@ button {
     width: 375px;
   }
 }
+
+ul {
+  list-style: none;
+}

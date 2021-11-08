@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './product_detail.module.css';
+import CommentList from '../comment/comment_list';
+
 
 const ProductDetail = (props) => {
 
@@ -64,6 +66,37 @@ const ProductDetail = (props) => {
         })
     }
 
+     //상품에 달린 댓글 정보
+    const[comments,setComments] = useState([]);
+
+
+    const[commentInputText,setCommentInputText] = useState('');
+
+
+    const commentChange = (e) => {
+        setCommentInputText(e.target.value)
+    };
+
+    const commentSubmit = (e) => {
+        e.preventDefault();
+        axios({
+            method: 'post',
+            url: `/comment/`,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            },
+            data: {
+                "product": history.location.props,
+                "comment": commentInputText,
+            }
+        })
+        .then(res => {
+            alert('댓글 작성 성공!!');
+        })
+        .catch(error => alert('댓글 작성 실패..'))
+    };
+
 
     useEffect(() => {
 
@@ -87,9 +120,10 @@ const ProductDetail = (props) => {
                 "product_lend_h": res.data.product_lend_h,
                 "product_lend_d": res.data.product_lend_d,
                 "product_type": res.data.product_type,
-                //"userId": res.data.userId,
+                "author": res.data.author,
                 //"postUserNickname": res.data.postUserNickname,
-            })
+            });
+            setComments(res.data.comments)
         })
         
         
@@ -114,7 +148,7 @@ const ProductDetail = (props) => {
                     </div>
                     <div className={styles.product_nickneme}>
                         {/* 닉네임으로 바꿔줘야함 */}
-                        <span>상기몬</span>
+                        <span>{product.author}</span>
                         <div className={styles.location}>
                             <span>{product.product_location}</span>
                         </div>
@@ -137,64 +171,15 @@ const ProductDetail = (props) => {
                         <span>{product.product_detail}</span>
                     </div>
                 </section>
-                {/* 댓글 */}
-                <div className={styles.commentInputBox}>
-                    <form className={styles.commentForm} onSubmit={handleSubmit}>
-                        <textarea className={styles.commentInput} name="comment" type="text" placeholder="댓글을 입력해 주세요." 
-                        value={comment} onChange={handleChange}/>
-                        <button className={styles.commentSubmit}>댓글쓰기</button>
-                    </form>
-                    {/* 댓글리스트 컴포넌트로 만들어줘야함 */}
-                    <div className={styles.commentList}>
-                        {/* 댓글 컴포넌트로 만들어줘야함*/}
-                        <div className={styles.commentItem}>
-                            <div className={styles.commentWriter}>
-                                댓글 작성자
-                            </div>
-                            <div className={styles.comment}>
-                                <div className={styles.commentData}>
-                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
-                                </div>
-                            <div className={styles.commentUpdate}>
-                                <button className={styles.commentUpdateBtn}> 수정</button>
-                                <button className={styles.commentDeleteBtn}> 삭제</button>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.commentItem}>
-                            <div className={styles.commentWriter}>
-                                댓글 작성자
-                            </div>
-                            <div className={styles.comment}>
-                                <div className={styles.commentData}>
-                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
-                                </div>
-                            <div className={styles.commentUpdate}>
-                                <button className={styles.commentUpdateBtn}> 수정</button>
-                                <button className={styles.commentDeleteBtn}> 삭제</button>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.commentItem}>
-                            <div className={styles.commentWriter}>
-                                댓글 작성자
-                            </div>
-                            <div className={styles.comment}>
-                                <div className={styles.commentData}>
-                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
-                                </div>
-                            <div className={styles.commentUpdate}>
-                                <button className={styles.commentUpdateBtn}> 수정</button>
-                                <button className={styles.commentDeleteBtn}> 삭제</button>
-                            </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
             </div>
+             {/* 댓글 */}
+            <CommentList comments={comments}/>
+                {/* 댓글 입력 폼 */}
+                <form className={styles.commentForm} onSubmit={commentSubmit}>
+                    <textarea className={styles.commentInput} name="comment" type="text" placeholder="댓글을 입력해 주세요." 
+                    value={commentInputText} onChange={commentChange}/>
+                    <button className={styles.commentSubmitBtn}>댓글쓰기</button>
+                </form>
         </div>
 
     );

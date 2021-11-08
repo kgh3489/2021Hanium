@@ -15,7 +15,7 @@ const ProductList = ({products, filteredData, setFilteredData, searchProducts}) 
 
     const filterMTV = () => {
         let filteredM = products.filter((type) => {
-            return type.product_type === 'MTV';
+            return type.product_type === 'MTB';
             });
             console.log(filteredM);
             setFilteredData(filteredM);
@@ -43,7 +43,7 @@ const ProductList = ({products, filteredData, setFilteredData, searchProducts}) 
             <button onClick={filterHandler} className={styles.filterBtn}><i className="fas fa-filter"></i></button>
             <div ref={filterRef} className={styles.filterBox}>
                 <div className={styles.bikeBox}>
-                    <button onClick={filterMTV} className={styles.bikeBtn}>MTV</button>
+                    <button onClick={filterMTV} className={styles.bikeBtn}>MTB</button>
                     <button onClick={filterHybrid} className={styles.bikeBtn}>하이브리드</button>
                     <button onClick={filterRoad} className={styles.bikeBtn}>로드바이크</button>
                 </div>

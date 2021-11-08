@@ -42,7 +42,7 @@ def createuser(request):
 #         return Response({"message": "duplicate email"}, status=status.HTTP_409_CONFLICT)
 
 @api_view(['POST'])
-@permission_classes ([AllowAny])
+@permission_classes ([IsAuthenticated])
 def login(request):
         if request.method == 'POST':
             serializer = LoginSerializer(data=request.data)

@@ -17,7 +17,7 @@ const UserInfo = (props) => {
 
         localStorage.removeItem('ACCESS_TOKEN');
         localStorage.removeItem('lend_user_nickname');
-        window.location.replace("/");
+        window.location.reload();
     }
 
     return (

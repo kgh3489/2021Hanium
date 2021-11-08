@@ -60,9 +60,9 @@ const Main = (props) => {
     useEffect(() => {
         getCurrentUser()
         .then(res => {
-            setLogined(true)
-            console.log(res)
-            localStorage.setItem('lend_user_nickname',res.data[1].nickname)
+            setLogined(true);
+            console.log(res);
+            localStorage.setItem('lend_user_nickname',res.data[2].username);
         })
         .catch(error => setLogined(false))
     },[])
