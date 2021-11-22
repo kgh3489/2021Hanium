@@ -18,6 +18,15 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 @api_view(['GET'])
 @permission_classes ([IsAuthenticated])
+def myuser(request):
+    if request.method == 'GET':
+        users = UserModel.objects.get(username=request.user.username)
+        serializer = UserSerializer(users)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes ([IsAuthenticated])
 def getuser(request):
     if request.method == 'GET':
         # users = request.user.is_authenticated
